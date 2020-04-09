@@ -1,0 +1,16 @@
+@import "../../assets/utils/variables";
+
+.auth-table {
+  .custom-button {
+    background-color: $green-search;
+    border-radius: 0.2rem;
+
+    svg {
+      margin: 0.3rem;
+    }
+
+    td {
+      vertical-align: center;
+    }
+  }
+}

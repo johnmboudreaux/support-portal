@@ -1,0 +1,13 @@
+@import "../../assets/utils/variables";
+
+.group {
+  padding: 0;
+
+  .input-group {
+    width: 30vw;
+    .btn {
+      background-color: $green-search;
+      color: white;
+    }
+  }
+}
