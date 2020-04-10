@@ -3,7 +3,7 @@ import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa'
 import './form-input.styles.scss';
 
-const FromInput = ({ handleChange, label, ...otherProps}) => (
+const FormInput = ({ handleChange, label, ...otherProps}) => (
   <div className="container group">
     <InputGroup className="mb-3">
       <FormControl
@@ -18,4 +18,4 @@ const FromInput = ({ handleChange, label, ...otherProps}) => (
   </div>
 );
 
-export default FromInput;
+export default FormInput;
