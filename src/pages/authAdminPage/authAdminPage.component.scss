@@ -17,12 +17,18 @@
     height: 6vh;
     margin-bottom: 1.5rem;
     padding: 0 1rem;
+    h3 {
+      margin-bottom: 0;
+    }
     .all-statuses {
       margin-right: 0.5rem;
     }
     button {
       background-color: #3474ad;
       margin-left: 5rem;
+    }
+    label {
+      margin-bottom: 0;
     }
   }
   hr {
