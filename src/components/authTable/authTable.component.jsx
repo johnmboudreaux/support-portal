@@ -5,6 +5,7 @@ import { FaEdit } from 'react-icons/fa';
 import './authTable.styles.scss';
 
 const AuthTable = () => (
+  <div className="table-wrapper">
   <Table className="container auth-table" striped bordered hover variant="dark">
   <thead>
     <tr>
@@ -20,7 +21,7 @@ const AuthTable = () => (
       <th>Visit Date</th>
     </tr>
   </thead>
-  <tbody>
+  {/* <tbody>
     <tr>
       <td valign="center"><CustomButton><FaEdit /></CustomButton></td>
       <td>Mark</td>
@@ -117,8 +118,10 @@ const AuthTable = () => (
       <td>9/24/2019 10:16:08 PM</td>
       <td>9/24/2019</td>
     </tr>
-  </tbody>
+  </tbody> */}
 </Table>
+<div className="waiting-for-search container"><h1>Search for an authorization number...</h1></div>
+</div>
 );
 
 export default AuthTable;

@@ -1,6 +1,4 @@
 import React from "react";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { FaTachometerAlt } from '@fortawesome/free-solid-svg-icons'
 import { DropdownButton, Dropdown } from 'react-bootstrap';
 import { FaTachometerAlt, FaChartLine, FaCog, FaCogs, FaRegChartBar, FaShieldAlt, FaLock } from 'react-icons/fa';
 import './header.styles.scss';
