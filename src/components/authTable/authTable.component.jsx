@@ -19,6 +19,7 @@ const AuthTable = () => (
       <th>Status</th>
       <th>Last Updated</th>
       <th>Visit Date</th>
+      <th>Active</th>
     </tr>
   </thead>
   {/* <tbody>
@@ -120,7 +121,7 @@ const AuthTable = () => (
     </tr>
   </tbody> */}
 </Table>
-<div className="waiting-for-search container"><h1>Search for an authorization number...</h1></div>
+<div className="waiting-for-search container"><h3>Search for an authorization number...</h3></div>
 </div>
 );
 
