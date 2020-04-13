@@ -6,7 +6,7 @@ import { FaAngleUp, FaAngleDown } from 'react-icons/fa';
 
 import './authAdminPage.component.scss';
 
-const AuthAdmin =  ({ filterState, handleClick }) => (
+const AuthAdmin =  ({ filterState, handleClick, handleChange }) => (
     <main className="container-fluid">
       <div className="main-content">
         <div className="search-authorizations">
@@ -29,7 +29,7 @@ const AuthAdmin =  ({ filterState, handleClick }) => (
           </div>
         </div>
         <hr />
-        <FormInput />
+        <FormInput handleChange={handleChange}/>
         <AuthTable />
       </div>
     </main>

@@ -17,12 +17,20 @@ class App extends Component {
       filterClosed: !this.state.filterClosed
     })
   }
+
+  handleChange = (e) => {
+    console.log(e.target.value);
+  }
   
   render() {    
     return (
       <div className="App">
         <Header />
-        <AuthAdminPage handleClick={this.handleClick} filterState={this.state.filterClosed}/>
+        <AuthAdminPage
+          handleClick={this.handleClick}
+          filterState={this.state.filterClosed}
+          handleChange={this.handleChange}
+        />
       </div>
     );
   }

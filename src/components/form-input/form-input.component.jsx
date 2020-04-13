@@ -7,9 +7,11 @@ const FormInput = ({ handleChange, label, ...otherProps}) => (
   <div className="container group">
     <InputGroup className="mb-3">
       <FormControl
-        placeholder="Search"
         aria-label="Search"
         aria-describedby="basic-addon2"
+        onChange={handleChange}
+        placeholder="Search"
+        type="text" 
       />
       <InputGroup.Append>
         <Button variant="outline-secondary"><FaSearch /></Button>
