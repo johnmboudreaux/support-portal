@@ -8,6 +8,22 @@
   margin-bottom: 1rem;
   width: 100%;
 
+  .dropdown-item {
+    color: $white;
+    font-size: 0.9rem ;
+    &:hover {
+      background-color: $white;
+      color: $medium-blue;
+      svg {
+        color: $medium-blue;
+      }
+    }
+  }
+
+  .dropdown-menu.show {
+    background-color: $medium-blue;
+  }
+
   .header-brand {
     display: flex;
     align-items: center;
@@ -28,7 +44,10 @@
       display: flex;
       margin-bottom: 0;
       li {
+        align-items: center;
         color: $white;
+        display: flex;
+        height: 1rem;
         margin: 0 2rem 0 0;
         a {
           color: $white;
@@ -36,6 +55,10 @@
         svg {
           margin-right: 0.2rem;
           width: 0.8rem;
+        }
+        button {
+          background-color: transparent;
+          border-color: transparent;
         }
       }
     }
@@ -63,21 +86,6 @@
         border-color: transparent;
         font-size: 0.9rem;
       }
-      .dropdown-item {
-        color: $white;
-        font-size: 0.9rem ;
-        &:hover {
-          background-color: $white;
-          color: $medium-blue;
-          svg {
-            color: $medium-blue;
-          }
-        }
-      }
-    }
-
-    .dropdown-menu.show {
-      background-color: $medium-blue;
     }
   }
 
