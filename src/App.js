@@ -1,4 +1,5 @@
 import React from 'react';
+import { Switch, Route, Redirect } from "react-router-dom";
 import Header from './components/header/header.component.jsx';
 import AuthAdminPage from './pages/authAdminPage/authAdminPage.component.jsx';
 
@@ -8,7 +9,9 @@ const App = () => {
     return (
       <div className="App">
         <Header />
-        <AuthAdminPage />
+        <Switch>
+          <Route exact path='/' component={AuthAdminPage} />
+        </Switch>
       </div>
     );
 }
