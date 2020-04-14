@@ -10,7 +10,8 @@ class AuthAdmin extends Component {
   constructor(props) {
     super(props)
     this.state= {
-      filterClosed: true
+      filterClosed: true,
+      inputVal: ''
     }
   }
 
@@ -21,9 +22,14 @@ class AuthAdmin extends Component {
   }
 
   handleChange = (e) => {
-    console.log(e.target.value);
-    console.log(e.target.value.charAt(0).toLowerCase() === 'A'.toLowerCase());
-    console.log(e.target.value.charAt(1));
+    this.setState({
+      inputValue: e.target.value
+    });
+  }
+
+  handleSearchClick = (e) => {
+    console.log(this.state.inputValue);
+
   }
 
   render() {
@@ -50,7 +56,10 @@ class AuthAdmin extends Component {
             </div>
           </div>
           <hr />
-          <FormInput onChange={this.handleChange}/>
+          <FormInput 
+            handleChange={this.handleChange}
+            handleSearchClick={this.handleSearchClick}
+          />
           <AuthTable />
         </div>
       </main>
