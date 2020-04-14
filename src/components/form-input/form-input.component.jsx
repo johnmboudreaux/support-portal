@@ -9,7 +9,6 @@ const FormInput = ({ handleChange, label, ...otherProps}) => (
       <FormControl
         aria-label="Search"
         aria-describedby="basic-addon2"
-        onChange={handleChange}
         placeholder="Search"
         type="text" 
       />
