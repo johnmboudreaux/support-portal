@@ -29,7 +29,6 @@ class AuthAdmin extends Component {
 
   handleSearchClick = (e) => {
     console.log(this.state.inputValue);
-
   }
 
   render() {

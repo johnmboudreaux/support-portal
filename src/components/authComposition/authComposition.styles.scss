@@ -1,0 +1,20 @@
+@import '../shared/variables';
+
+.auth-comp-wrapper {
+  border: solid 1px $medium-blue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  
+  header {
+    align-items: center;
+    background-color: $medium-blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: $white;
+    display: flex;
+    height: 2rem;
+    h5 {
+      margin-left: 1rem;
+    }
+  }
+}
