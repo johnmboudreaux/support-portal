@@ -1,0 +1,10 @@
+.details-for-auth-content {
+  display: flex;
+  justify-content: space-evenly;
+
+  .patient-info,
+  .employer-info,
+  .visit-info {
+    text-align: right;
+  }
+}
