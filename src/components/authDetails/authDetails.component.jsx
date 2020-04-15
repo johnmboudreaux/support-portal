@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './detailsForAuth.scss';
+import './authDetails.styles.scss';
 
 const DetailsForAuth = () => (
   <div className="details-for-auth-wrapper">
