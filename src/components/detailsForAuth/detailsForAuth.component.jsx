@@ -4,7 +4,7 @@ import './detailsForAuth.scss';
 
 const DetailsForAuth = () => (
   <div className="details-for-auth-wrapper">
-    <header></header>
+    <header><span>Authorization Details</span></header>
     <div className="details-for-auth-content">
       <div className="patient-info">
         <h5>Patient Info</h5>

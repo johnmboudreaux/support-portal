@@ -1,10 +1,31 @@
-.details-for-auth-content {
-  display: flex;
-  justify-content: space-evenly;
+@import '../shared/variables';
+.details-for-auth-wrapper {
+  border: solid 1px $medium-blue;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 
-  .patient-info,
-  .employer-info,
-  .visit-info {
-    text-align: right;
+  header {
+    align-items: center;
+    background-color: $medium-blue;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: $white;
+    display: flex;
+    height: 2rem;
+    span {
+      margin-left: 1rem;
+    }
+  }
+  .details-for-auth-content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem;
+    
+    .patient-info,
+    .employer-info,
+    .visit-info {
+      text-align: right;
+    }
   }
 }
+  
