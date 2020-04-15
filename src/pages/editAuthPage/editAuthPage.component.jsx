@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthDetails from '../../components/authDetails/authDetails.component';
+import AuthDocument from '../../components/authDocuments/authDocuments.component';
 // import { Button, SplitButton, DropdownType, ButtonGroup, Dropdown } from 'react-bootstrap';
 // import { FaSearch } from 'react-icons/fa'
 
@@ -22,6 +23,7 @@ const EditAuthPage = () => (
       </div>
       <hr />
       <AuthDetails />
+      <AuthDocument />
     </div>
   </main>
 );

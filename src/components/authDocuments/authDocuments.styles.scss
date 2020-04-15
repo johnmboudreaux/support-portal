@@ -1,11 +1,10 @@
 @import '../shared/variables';
 
-.auth-details-wrapper {
+.auth-documents-wrapper {
   border: solid 1px $medium-blue;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  margin-bottom: 4rem;
-
+  
   header {
     align-items: center;
     background-color: $medium-blue;
@@ -18,16 +17,4 @@
       margin-left: 1rem;
     }
   }
-  .auth-details-content {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 3rem;
-    
-    .patient-info,
-    .employer-info,
-    .visit-info {
-      text-align: right;
-    }
-  }
 }
-  

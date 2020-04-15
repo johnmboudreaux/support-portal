@@ -3,9 +3,9 @@ import React from 'react';
 import './authDetails.styles.scss';
 
 const DetailsForAuth = () => (
-  <div className="details-for-auth-wrapper">
-    <header><span>Authorization Details</span></header>
-    <div className="details-for-auth-content">
+  <div className="auth-details-wrapper">
+    <header><h5>Authorization Details</h5></header>
+    <div className="auth-details-content">
       <div className="patient-info">
         <h5>Patient Info</h5>
         <div>Name:</div>
