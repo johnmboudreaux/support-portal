@@ -1,11 +1,10 @@
 @import '../shared/variables';
 
-.auth-documents-wrapper {
+.auth-comp-wrapper {
   border: solid 1px $medium-blue;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  margin-bottom: 3rem;
-
+  
   header {
     align-items: center;
     background-color: $medium-blue;
