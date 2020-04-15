@@ -2,11 +2,10 @@ import React from 'react';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
 import AuthComposition from '../../components/authComposition/authComposition.component';
-// import { Button, SplitButton, DropdownType, ButtonGroup, Dropdown } from 'react-bootstrap';
-// import { FaSearch } from 'react-icons/fa'
 
-import './editAuthPage.styles.scss';
-const EditAuthPage = () => (
+import './authEdit.styles.scss';
+
+const AuthEdit = () => (
   <main className="container-fluid">
     <div className="main-content">
       <div className="edit-page-status-selector container">
@@ -30,4 +29,4 @@ const EditAuthPage = () => (
   </main>
 );
 
-export default EditAuthPage;
+export default AuthEdit;
