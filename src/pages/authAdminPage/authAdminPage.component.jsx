@@ -37,7 +37,7 @@ class AuthAdmin extends Component {
             />
             <StatusSelect dataNodes={dataNodes}/>
           </div>
-          <AuthDetails />
+          <AuthDetails dataNodes={dataNodes}/>
           <AuthDocument />
           <AuthComposition />
         </div>
