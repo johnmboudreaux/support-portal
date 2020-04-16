@@ -3,9 +3,7 @@ import React from 'react';
 
 import './statusSelect.styles.scss';
 
-const StatusSelect = ({ dataNodes }) => {
-  console.log(dataNodes);
-  
+const StatusSelect = ({ dataNodes }) => {  
   return (
       <div className="main-content">
         <div className="auth-edit container">

@@ -2,9 +2,10 @@ import React from 'react';
 
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ dataNodes }) => (
-  dataNodes.map(node => (
-    <div key={`${node.authorizationPatientId}`}className="auth-details-wrapper">
+const AuthDetails = ({ dataNodes, handleSearchClick }) => {
+  
+  return dataNodes.map(node => {
+    return <div key={`${node.authorizationPatientId}`} className="auth-details-wrapper">
       <header><h5>Authorization {`${node.authorizationPatientId} `} Details</h5></header>
       <div className="auth-details-content">
         <div className="patient-info">
@@ -33,7 +34,7 @@ const AuthDetails = ({ dataNodes }) => (
         </div>
       </div>
     </div>
-  ))
-);
+  })
+};
 
 export default AuthDetails;

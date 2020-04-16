@@ -12,7 +12,8 @@ class AuthAdmin extends Component {
   constructor(props) {
     super(props)
     this.state= {
-      inputVal: ''
+      inputVal: '',
+      data: dataNodes
     }
   }
 
@@ -23,7 +24,9 @@ class AuthAdmin extends Component {
   }
 
   handleSearchClick = (e) => {
-    console.log(this.state.inputValue);
+    // simulated fetch response
+    const databaseResponse = [dataNodes[0]];
+    this.setState({data: databaseResponse});
   }
 
   render() {
@@ -37,7 +40,10 @@ class AuthAdmin extends Component {
             />
             <StatusSelect dataNodes={dataNodes}/>
           </div>
-          <AuthDetails dataNodes={dataNodes}/>
+          <AuthDetails
+            dataNodes={this.state.data}
+            handleSearchClick={this.handleSearchClick}
+          />
           <AuthDocument />
           <AuthComposition />
         </div>
