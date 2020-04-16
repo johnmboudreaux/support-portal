@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import FormInput from '../../components/form-input/form-input.component';
 import AuthEdit from '../../components/authEdit/authEdit.component';
+import AuthDetails from '../../components/authDetails/authDetails.component';
+import AuthDocument from '../../components/authDocuments/authDocuments.component';
+import AuthComposition from '../../components/authComposition/authComposition.component';
+import dataNodes from '../../data/authorization.json';
 
 import './authAdminPage.component.scss';
 
@@ -26,11 +30,16 @@ class AuthAdmin extends Component {
     return (
       <main className="container-fluid">
         <div className="main-content">
-          <FormInput 
-            handleChange={this.handleChange}
-            handleSearchClick={this.handleSearchClick}
-          />
-          <AuthEdit />
+        <div className="search">
+            <FormInput 
+              handleChange={this.handleChange}
+              handleSearchClick={this.handleSearchClick}
+            />
+            <AuthEdit dataNodes={dataNodes}/>
+          </div>
+          <AuthDetails />
+          <AuthDocument />
+          <AuthComposition />
         </div>
       </main>
     )

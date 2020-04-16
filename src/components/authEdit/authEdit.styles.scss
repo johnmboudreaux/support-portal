@@ -1,25 +1,10 @@
-.edit-page-status-selector {
+.auth-edit {
   align-items: center;
   display: flex;
-  justify-content: space-between;
-
-  h4 {
-    font-size: 1rem;
-  }
+  justify-content: flex-end;
 
   .status-group {
     display: flex;
     align-items: center;
-
-  }
-
-  .input-group {
-    margin: 0 0 0 1.5rem;
-    width: 23vw;
-
-    .btn {
-      background-color: transparent;
-      color: #000;
-    }
   }
 }
