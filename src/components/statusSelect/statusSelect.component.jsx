@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-import './authEdit.styles.scss';
+import './statusSelect.styles.scss';
 
-const AuthEdit = ({ dataNodes }) => {
+const StatusSelect = ({ dataNodes }) => {
   console.log(dataNodes);
   
   return (
@@ -24,4 +24,4 @@ const AuthEdit = ({ dataNodes }) => {
   )
 };
 
-export default AuthEdit;
+export default StatusSelect;

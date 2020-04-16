@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FormInput from '../../components/form-input/form-input.component';
-import AuthEdit from '../../components/authEdit/authEdit.component';
+import StatusSelect from '../../components/statusSelect/statusSelect.component';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
 import AuthComposition from '../../components/authComposition/authComposition.component';
@@ -35,7 +35,7 @@ class AuthAdmin extends Component {
               handleChange={this.handleChange}
               handleSearchClick={this.handleSearchClick}
             />
-            <AuthEdit dataNodes={dataNodes}/>
+            <StatusSelect dataNodes={dataNodes}/>
           </div>
           <AuthDetails />
           <AuthDocument />
