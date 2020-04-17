@@ -17,16 +17,23 @@ class AuthAdmin extends Component {
     }
   }
 
-  handleChange = (e) => {
-    this.setState({
-      inputValue: e.target.value
-    });
+  handleChange = (event) => {
+      this.setState({inputVal: event.target.value});
   }
 
-  handleSearchClick = (e) => {
-    // simulated fetch response
-    const databaseResponse = [dataNodes[0]];
-    this.setState({data: databaseResponse});
+  handleSearchClick = () => {
+    const targetNode = this.findTarget();
+    
+    this.setState({data: targetNode});
+  }
+
+  findTarget = () => {
+    const targetNode = dataNodes.find(node => {
+      if (node.authorizationPatientId === this.state.inputVal) {
+        return node
+      };
+    });
+    return targetNode;
   }
 
   render() {
@@ -41,8 +48,7 @@ class AuthAdmin extends Component {
             <StatusSelect dataNodes={dataNodes}/>
           </div>
           <AuthDetails
-            dataNodes={this.state.data}
-            handleSearchClick={this.handleSearchClick}
+            findTarget={this.findTarget}
           />
           <AuthDocument />
           <AuthComposition />

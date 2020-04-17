@@ -3,14 +3,14 @@ import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import './form-input.styles.scss';
 
-const FormInput = ({ handleChange, handleSearchClick, ...otherProps}) => (
+const FormInput = ({ handleChange, handleSearchClick}) => (
   <div className="container group">
     <InputGroup className="mb-3">
       <FormControl
         aria-label="Search"
         aria-describedby="basic-addon2"
         onChange={handleChange}
-        placeholder="Search"
+        placeholder="Search for an Authorization"
         type="text" 
       />
       <InputGroup.Append>
