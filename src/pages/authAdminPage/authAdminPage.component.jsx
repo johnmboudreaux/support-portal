@@ -11,20 +11,25 @@ import './authAdminPage.component.scss';
 class AuthAdmin extends Component {
   constructor(props) {
     super(props)
-    this.state= {
+    this.state = {
       inputVal: '',
       data: dataNodes
     }
+    this.stringToSet = ''
   }
 
   handleChange = (event) => {
-      this.setState({inputVal: event.target.value});
+    this.stringToSet = event.currentTarget.value;
   }
 
   handleSearchClick = () => {
     const targetNode = this.findTarget();
+    const stateInputVal = this.stringToSet;
     
-    this.setState({data: targetNode});
+    this.setState({
+      data: targetNode,
+      inputVal: stateInputVal
+      });
   }
 
   findTarget = () => {
@@ -33,6 +38,7 @@ class AuthAdmin extends Component {
         return node
       };
     });
+
     return targetNode;
   }
 
