@@ -22,11 +22,15 @@
     display: flex;
     justify-content: space-evenly;
     padding: 3rem;
-    
-    .patient-info,
-    .employer-info,
-    .visit-info {
-      text-align: right;
+
+    .patient-info {
+      display: flex;
+      flex-direction: column;
+
+      .custom-button {
+        background-color: $green-search;
+        border-radius: 3px;
+      }
     }
   }
 }

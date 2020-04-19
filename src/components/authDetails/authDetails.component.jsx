@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '../../components/customButton/customButton.component';
+import { FaEdit } from 'react-icons/fa';
 
 import './authDetails.styles.scss';
 
@@ -10,28 +12,28 @@ const AuthDetails = ({ findTarget }) => {
           <header><h5>Authorization {`${targetNode.authorizationPatientId} `} Details</h5></header>
           <div className="auth-details-content">
             <div className="patient-info">
-              <h5>Patient Info</h5>
-              <span>Name:</span><span>{` ${targetNode.firstName} ${targetNode.lastName}`}</span>
-              <div>SSN: {` ${targetNode.ssn}`}</div>
-              <div>Date Of Birth: {`${targetNode.dob}`}</div>
-              <div>Phone: {` ${targetNode.phone}`}</div>
+              <h5>Patient Info <Button type="submit"><FaEdit /></Button></h5>
+              <span><strong>Name:</strong>{` ${targetNode.firstName} ${targetNode.lastName}`}</span>
+              <div><strong>SSN:</strong>{` ${targetNode.ssn}`}</div>
+              <div><strong>Date Of Birth:</strong> {`${targetNode.dob}`}</div>
+              <div><strong>Phone:</strong> {` ${targetNode.phone}`}</div>
             </div>
             <div className="employer-info">
               <h5>Employer Info</h5>
-              <div>Company: {` ${targetNode.company}`}</div>
-              <div>Job #: {` ${targetNode.jobNumber}`}</div>
-              <div>Authorizing Rep: {` ${targetNode.authRep}`}</div>
-              <div>Rep Phone: {` ${targetNode.authRepPhone}`}</div>
-              <div>Billing Group: {` ${targetNode.billingGroup}`}</div>
+              <div><strong>Company:</strong>{` ${targetNode.company}`}</div>
+              <div><strong>Job #:</strong>{` ${targetNode.jobNumber}`}</div>
+              <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
+              <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>
+              <div><strong>Billing Group:</strong>{` ${targetNode.billingGroup}`}</div>
             </div>
             <div className="visit-info">
               <h5>Visit Info</h5>
-              <div>Reason for Visit: {` ${targetNode.reason}`}</div>
-              <div>Date of Visit: {`${targetNode.visitDate}`}</div>
-              <div>Purchase Order: {` ${targetNode.poNum}`}</div>
-              <div>Clinic: </div>
-              <div>Provider:</div>
-              <div>Check in Status: {` ${targetNode.status}`}</div>
+              <div><strong>Reason for Visit:</strong>{` ${targetNode.reason}`}</div>
+              <div><strong>Date of Visit:</strong>{`${targetNode.visitDate}`}</div>
+              <div><strong>Purchase Order:</strong>{` ${targetNode.poNum}`}</div>
+              <div><strong>Clinic:</strong></div>
+              <div><strong>Provider:</strong></div>
+              <div><strong>Check in Status:</strong>{` ${targetNode.status}`}</div>
             </div>
           </div>
         </div>
@@ -43,27 +45,27 @@ const AuthDetails = ({ findTarget }) => {
         <div className="auth-details-content">
           <div className="patient-info">
             <h5>Patient Info</h5>
-            <span>Name:</span>
-            <div>SSN:</div>
-            <div>Date Of Birth:</div>
-            <div>Phone:</div>
+            <div><strong>Name:</strong></div>
+            <div><strong>SSN:</strong></div>
+            <div><strong>Date Of Birth:</strong></div>
+            <div><strong>Phone:</strong></div>
           </div>
           <div className="employer-info">
             <h5>Employer Info</h5>
-            <div>Company:</div>
-            <div>Job #: </div>
-            <div>Authorizing Rep: </div>
-            <div>Rep Phone: </div>
-            <div>Billing Group: </div>
+            <div><strong>Company:</strong></div>
+            <div><strong>Job #:</strong></div>
+            <div><strong>Authorizing Rep:</strong></div>
+            <div><strong>Rep Phone:</strong></div>
+            <div><strong>Billing Group:</strong></div>
           </div>
           <div className="visit-info">
             <h5>Visit Info</h5>
-            <div>Reason for Visit: </div>
-            <div>Date of Visit: </div>
-            <div>Purchase Order: </div>
-            <div>Clinic: </div>
-            <div>Provider:</div>
-            <div>Check in Status: </div>
+            <div><strong>Reason for Visit:</strong></div>
+            <div><strong>Date of Visit:</strong></div>
+            <div><strong>Purchase Order:</strong></div>
+            <div><strong>Clinic:</strong></div>
+            <div><strong>Provider:</strong></div>
+            <div><strong>Check in Status:</strong></div>
           </div>
         </div>
       </div>
