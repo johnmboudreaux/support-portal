@@ -31,6 +31,17 @@
         background-color: $green-search;
         border-radius: 3px;
       }
+      .employer-info {
+        .company {
+          display: flex;
+          align-items: baseline;
+          .group {
+            .input-group {
+              width: 20vw;
+            }
+          }
+        }
+      }
     }
   }
 }

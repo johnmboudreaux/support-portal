@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../../components/customButton/customButton.component';
+import FormInput from '../form-input/form-input.component';
 import { FaEdit } from 'react-icons/fa';
 
 import './authDetails.styles.scss';
@@ -20,7 +21,9 @@ const AuthDetails = ({ findTarget }) => {
             </div>
             <div className="employer-info">
               <h5>Employer Info</h5>
-              <div><strong>Company:</strong>{` ${targetNode.company}`}</div>
+              <div className="company"><strong>Company:</strong>
+                <FormInput placeholder={`${targetNode.company}`}/>
+              </div>
               <div><strong>Job #:</strong>{` ${targetNode.jobNumber}`}</div>
               <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
               <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>

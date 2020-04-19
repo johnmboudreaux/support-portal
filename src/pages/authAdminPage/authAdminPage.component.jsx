@@ -10,13 +10,15 @@ import './authAdminPage.component.scss';
 
 class AuthAdmin extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       inputVal: '',
-      data: dataNodes
+      data: dataNodes,
+      placeholder: 'Search for Authorization'
     }
-    this.stringToSet = ''
+    this.stringToSet = '';
   }
+  
 
   handleChange = (event) => {
     this.stringToSet = event.currentTarget.value;
@@ -29,7 +31,7 @@ class AuthAdmin extends Component {
     this.setState({
       data: targetNode,
       inputVal: stateInputVal
-      });
+    });
   }
 
   findTarget = () => {
@@ -47,9 +49,10 @@ class AuthAdmin extends Component {
       <main className="container-fluid">
         <div className="main-content">
         <div className="search">
-            <FormInput 
+            <FormInput
               handleChange={this.handleChange}
               handleSearchClick={this.handleSearchClick}
+              placeholder={this.state.placeholder}
             />
             <StatusSelect dataNodes={dataNodes}/>
           </div>
