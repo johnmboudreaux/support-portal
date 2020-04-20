@@ -9,25 +9,35 @@ const AuthDetails = ({ findTarget }) => {
   const targetNode = findTarget();
   if(targetNode) {
     return (
-        <div key={`${targetNode.authorizationPatientId}`} className="auth-details-wrapper">
+        <div 
+          className="auth-details-wrapper"
+          key={`${targetNode.authorizationPatientId}`}
+        >
           <header><h5>Authorization {`${targetNode.authorizationPatientId} `} Details</h5></header>
           <div className="auth-details-content">
             <div className="patient-info">
               <h5>Patient Info <Button type="submit"><FaEdit /></Button></h5>
-              <span><strong>Name:</strong>{` ${targetNode.firstName} ${targetNode.lastName}`}</span>
+              <div><strong>Name:</strong>{` ${targetNode.firstName} ${targetNode.lastName}`}</div>
               <div><strong>SSN:</strong>{` ${targetNode.ssn}`}</div>
               <div><strong>Date Of Birth:</strong> {`${targetNode.dob}`}</div>
               <div><strong>Phone:</strong> {` ${targetNode.phone}`}</div>
             </div>
             <div className="employer-info">
               <h5>Employer Info</h5>
-              <div className="company"><strong>Company:</strong>
+              <div className="company">
+                <strong>Company:</strong>
                 <FormInput placeholder={`${targetNode.company}`}/>
               </div>
-              <div><strong>Job #:</strong>{` ${targetNode.jobNumber}`}</div>
+              <div className="job-number">
+                <strong>Job#:</strong>
+                <FormInput placeholder={`${targetNode.jobNumber}`}/>
+              </div>
               <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
               <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>
-              <div><strong>Billing Group:</strong>{` ${targetNode.billingGroup}`}</div>
+              <div className="billing-group">
+                <strong>BillingGroup:</strong>
+                <FormInput placeholder={`${targetNode.billingGroup}`}/>
+              </div>
             </div>
             <div className="visit-info">
               <h5>Visit Info</h5>

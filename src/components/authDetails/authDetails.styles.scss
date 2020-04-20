@@ -18,6 +18,7 @@
       margin-left: 1rem;
     }
   }
+
   .auth-details-content {
     display: flex;
     justify-content: space-evenly;
@@ -27,17 +28,35 @@
       display: flex;
       flex-direction: column;
 
+      h5, div {
+        margin-bottom: 0.5rem;
+      }
+
       .custom-button {
         background-color: $green-search;
         border-radius: 3px;
       }
-      .employer-info {
-        .company {
-          display: flex;
-          align-items: baseline;
-          .group {
-            .input-group {
-              width: 20vw;
+    }
+
+    .employer-info {
+      h5, 
+      div {
+        margin-bottom: 0.5rem;
+      }
+      .company,
+      .job-number,
+      .billing-group  {
+        display: flex;
+        align-items: baseline;
+        .input-group {
+          width: 20vw;
+          .form-control {
+            height: 8vh;
+          }
+          button {
+            height: 8vh;
+            svg {
+              vertical-align: top;
             }
           }
         }

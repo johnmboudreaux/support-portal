@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import './form-input.styles.scss';
