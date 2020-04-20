@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, Col } from 'react-bootstrap';
 import Button from '../../components/customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
 import { FaEdit } from 'react-icons/fa';
@@ -41,7 +42,15 @@ const AuthDetails = ({ findTarget }) => {
             </div>
             <div className="visit-info">
               <h5>Visit Info</h5>
-              <div><strong>Reason for Visit:</strong>{` ${targetNode.reason}`}</div>
+              <div className="reason">
+                <Form.Group as={Col} controlId="formGridState">
+                  <Form.Label><strong>Reason for Visit:</strong></Form.Label>
+                  <Form.Control as="select" defaultValue={` ${targetNode.reason}`}>
+                    <option>Choose...</option>
+                    <option>...</option>
+                  </Form.Control>
+                </Form.Group>
+              </div>
               <div><strong>Date of Visit:</strong>{`${targetNode.visitDate}`}</div>
               <div><strong>Purchase Order:</strong>{` ${targetNode.poNum}`}</div>
               <div><strong>Clinic:</strong></div>
