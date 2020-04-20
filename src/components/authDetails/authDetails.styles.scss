@@ -39,8 +39,7 @@
     }
 
     .employer-info {
-      h5, 
-      div {
+      div:nth-child(n+4):nth-child(-n+5) {
         margin-bottom: 0.5rem;
       }
       .company,
