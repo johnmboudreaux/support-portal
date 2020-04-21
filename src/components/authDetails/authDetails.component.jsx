@@ -43,26 +43,44 @@ const AuthDetails = ({ findTarget }) => {
                 <FormInput placeholder={`${targetNode.billingGroup}`}/>
               </div>
             </div>
+
+
+
             <div className="visit-info">
               <h5>Visit Info</h5>
               <div className="reason">
                 <Form.Group as={Col} controlId="formGridState">
                   <Form.Label><strong>Reason for Visit:</strong></Form.Label>
-                  <Form.Control as="select" defaultValue={` ${targetNode.reason}`}>
+                  <Form.Control as="select" defaultValue={`${targetNode.reason}`}>
                     <option>Choose...</option>
                     <option>...</option>
                   </Form.Control>
                 </Form.Group>
               </div>
-              <div>
+              <div className="visit-date">
                 <strong>Date of Visit:</strong>
                 <SingleDatePickerWrapper placeholder={targetNode.visitDate}/>
               </div>
-              <div><strong>Purchase Order:</strong>{` ${targetNode.poNum}`}</div>
-              <div><strong>Clinic:</strong></div>
-              <div><strong>Provider:</strong></div>
-              <div><strong>Check in Status:</strong>{` ${targetNode.status}`}</div>
+              <div className="purchase-order">
+                <strong>Purchase Order:</strong>
+                <FormInput placeholder={`${targetNode.poNum}`}/>
+              </div>
+              <div className="clinic">
+                <strong>Clinic:</strong>
+                <FormInput placeholder={`${targetNode.clinic}`}/>
+              </div>
+              <div className="provider">
+                <strong>Provider:</strong>
+                <FormInput placeholder={`${targetNode.provider}`}/>
+              </div>
+              <div>
+                <strong>Check in Status:</strong>
+                {` ${targetNode.status}`}
+              </div>
             </div>
+
+
+
           </div>
         </div>
     );

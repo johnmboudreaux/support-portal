@@ -1,0 +1,13 @@
+@import '../shared/variables';
+
+// Will edit selected date or the endpoints of a range of dates
+.CalendarDay__selected {
+  background: $green-search;
+  color: white;
+}
+
+// Will edit when hovered over. _span style also has this property
+.CalendarDay__selected:hover {
+  background: $medium-blue;
+  color: white;
+}

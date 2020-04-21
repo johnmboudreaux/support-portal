@@ -44,7 +44,7 @@
       }
       .company,
       .job-number,
-      .billing-group  {
+      .billing-group {
         display: flex;
         align-items: baseline;
         .input-group {
@@ -62,18 +62,61 @@
       }
     }
 
-    .reason {
-      .form-group {
-        align-items: baseline;
+    .visit-info {
+      title-inputs-wrapper {
         display: flex;
-        margin-bottom: 0;
-        padding: 0;
-
-        label {
-          width: 20vw;
+      }
+      div {
+        margin-bottom: 0.2rem;
+      }
+      strong {
+        text-align: right;
+        width: 10vw;
+      }
+      .reason {
+        .form-group {
+          align-items: baseline;
+          display: flex;
+          margin-bottom: 0;
+          padding: 0;
+  
+          label {
+            width: 17vw;
+          }
+        }
+  
+      }
+      
+      .visit-date {
+        display: flex;
+        align-items: center;
+        strong {
+          margin-right: 1.5rem;
+          width: 10vw;
         }
       }
-
+  
+      .purchase-order,
+      .clinic,
+      .provider {
+        display: flex;
+        align-items: baseline;
+        strong {
+          width: 15vw;
+        }
+        .input-group {
+          width: 20vw;
+          .form-control {
+            height: 8vh;
+          }
+          button {
+            height: 8vh;
+            svg {
+              vertical-align: top;
+            }
+          }
+        }
+      }
     }
   }
 }

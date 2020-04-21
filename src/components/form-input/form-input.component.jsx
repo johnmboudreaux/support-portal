@@ -5,20 +5,22 @@ import './form-input.styles.scss';
 
 const FormInput = ({ handleChange, handleSearchClick, placeholder }) => {
   
-  return <div className="container group">
-    <InputGroup className="mb-3">
-      <FormControl
-        aria-label="Search"
-        aria-describedby="basic-addon2"
-        onChange={handleChange}
-        placeholder={placeholder}
-        type="text" 
-      />
-      <InputGroup.Append>
-        <Button onClick={handleSearchClick} variant="outline-secondary"><FaSearch /></Button>
-      </InputGroup.Append>
-    </InputGroup>
-  </div>
+  return (
+    <div className="group">
+      <InputGroup className="mb-3">
+        <FormControl
+          aria-label="Search"
+          aria-describedby="basic-addon2"
+          onChange={handleChange}
+          placeholder={placeholder}
+          type="text" 
+        />
+        <InputGroup.Append>
+          <Button onClick={handleSearchClick} variant="outline-secondary"><FaSearch /></Button>
+        </InputGroup.Append>
+      </InputGroup>
+    </div>
+  )
 };
 
 export default FormInput;

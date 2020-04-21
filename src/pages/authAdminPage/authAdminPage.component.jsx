@@ -51,7 +51,7 @@ class AuthAdmin extends Component {
     return (
       <main className="container-fluid">
         <div className="main-content">
-        <div className="search">
+          <div className="search">
             <FormInput
               handleChange={this.handleChange}
               handleSearchClick={this.handleSearchClick}
