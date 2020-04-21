@@ -43,9 +43,6 @@ const AuthDetails = ({ findTarget }) => {
                 <FormInput placeholder={`${targetNode.billingGroup}`}/>
               </div>
             </div>
-
-
-
             <div className="visit-info">
               <h5>Visit Info</h5>
               <div className="reason">
@@ -59,7 +56,7 @@ const AuthDetails = ({ findTarget }) => {
               </div>
               <div className="visit-date">
                 <strong>Date of Visit:</strong>
-                <SingleDatePickerWrapper placeholder={targetNode.visitDate}/>
+                <SingleDatePickerWrapper placeholderText={targetNode.visitDate}/>
               </div>
               <div className="purchase-order">
                 <strong>Purchase Order:</strong>
@@ -78,9 +75,6 @@ const AuthDetails = ({ findTarget }) => {
                 {` ${targetNode.status}`}
               </div>
             </div>
-
-
-
           </div>
         </div>
     );

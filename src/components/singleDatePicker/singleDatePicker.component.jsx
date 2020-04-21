@@ -1,42 +1,27 @@
 import React, { Component } from 'react';
-import "react-dates/initialize";
-import "react-dates/lib/css/_datepicker.css";
-import { SingleDatePicker } from "react-dates";
-import moment from 'moment';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import './singleDatePicker.styles.scss';
 
 class SingleDatePickerWrapper extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      createdAt: moment(),
-      calendarFocused: false
-    };
-  }
-
-  onDateChange = (createdAt) => {
-    this.setState({ createdAt });
-  }
-
-  onFocusChange = ({ focused }) => {
+  state = {
+    startDate: false
+  };
+ 
+  handleChange = date => {
     this.setState({
-      calendarFocused: focused
+      startDate: date
     });
-  }
-
+  };
+ 
   render() {
     return (
-      <div>
-        <SingleDatePicker
-          date={this.state.createdAt}
-          onDateChange={this.onDateChange}
-          focused={this.state.calendarFocused}
-          numberOfMonths={1}
-          onFocusChange={this.onFocusChange}
-          id="SDP"
-        />
-      </div>
+      <DatePicker
+        onChange={this.handleChange}
+        placeholderText={this.props.placeholderText}
+        selected={this.state.startDate}
+      />
     );
   }
 }
