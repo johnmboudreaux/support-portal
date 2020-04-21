@@ -1,13 +1,16 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
+import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.component';
 import Button from '../../components/customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
 import { FaEdit } from 'react-icons/fa';
 
+
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ findTarget }) => {
+const AuthDetails = ({ findTarget }) => {  
   const targetNode = findTarget();
+
   if(targetNode) {
     return (
         <div 
@@ -51,7 +54,10 @@ const AuthDetails = ({ findTarget }) => {
                   </Form.Control>
                 </Form.Group>
               </div>
-              <div><strong>Date of Visit:</strong>{`${targetNode.visitDate}`}</div>
+              <div>
+                <strong>Date of Visit:</strong>
+                <SingleDatePickerWrapper placeholder={targetNode.visitDate}/>
+              </div>
               <div><strong>Purchase Order:</strong>{` ${targetNode.poNum}`}</div>
               <div><strong>Clinic:</strong></div>
               <div><strong>Provider:</strong></div>
@@ -93,7 +99,6 @@ const AuthDetails = ({ findTarget }) => {
       </div>
     );
   }
-  
 };
 
 export default AuthDetails;

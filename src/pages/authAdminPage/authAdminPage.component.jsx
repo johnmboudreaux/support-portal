@@ -14,7 +14,7 @@ class AuthAdmin extends Component {
     this.state = {
       inputVal: '',
       data: dataNodes,
-      placeholder: 'Search for Authorization'
+      placeholder: 'Search for Authorization',
     }
     this.stringToSet = '';
   }
@@ -32,6 +32,10 @@ class AuthAdmin extends Component {
       data: targetNode,
       inputVal: stateInputVal
     });
+  }
+
+  onDatesChange = ({ startDate, endDate }) => { 
+    this.setState({ startDate, endDate })
   }
 
   findTarget = () => {
@@ -55,8 +59,9 @@ class AuthAdmin extends Component {
             />
             <StatusSelect dataNodes={dataNodes}/>
           </div>
-          <AuthDetails
-            findTarget={this.findTarget}
+          <AuthDetails 
+            date={this.state.date}
+            findTarget={this.findTarget}  
           />
           <AuthDocument />
           <AuthComposition />
