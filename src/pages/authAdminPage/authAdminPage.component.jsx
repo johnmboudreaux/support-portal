@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import FormInput from '../../components/form-input/form-input.component';
-import StatusSelect from '../../components/statusSelect/statusSelect.component';
+import Search from '../../components/search/search.component';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
 import AuthComposition from '../../components/authComposition/authComposition.component';
@@ -49,14 +48,10 @@ class AuthAdmin extends Component {
     return (
       <main className="container-fluid">
         <div className="main-content">
-          <div className="search">
-            <FormInput
-              handleChange={this.handleChange}
-              handleSearchClick={this.handleSearchClick}
-              placeholder='Search for Authorization'
-            />
-            <StatusSelect />
-          </div>
+          <Search 
+            handleChange={this.handleChange}
+            handleSearchClick={this.handleSearchClick}
+          />
           <AuthDetails 
             findTarget={this.findTarget}  
           />
