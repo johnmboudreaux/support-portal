@@ -13,8 +13,6 @@ class AuthAdmin extends Component {
     super(props);
     this.state = {
       inputVal: '',
-      data: dataNodes,
-      placeholder: 'Search for Authorization',
     }
     this.stringToSet = '';
   }
@@ -55,12 +53,11 @@ class AuthAdmin extends Component {
             <FormInput
               handleChange={this.handleChange}
               handleSearchClick={this.handleSearchClick}
-              placeholder={this.state.placeholder}
+              placeholder='Search for Authorization'
             />
-            <StatusSelect dataNodes={dataNodes}/>
+            <StatusSelect />
           </div>
           <AuthDetails 
-            date={this.state.date}
             findTarget={this.findTarget}  
           />
           <AuthDocument />
