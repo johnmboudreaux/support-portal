@@ -37,8 +37,7 @@ class AuthAdmin extends Component {
 
   findTarget = () => {
     const targetNode = dataNodes.find(node => {
-      const thing = node.authorizationPatientId === this.state.inputVal ? node : undefined;
-      return thing;
+      return  node.authorizationPatientId === this.state.inputVal ? node : null;
     });
 
     return targetNode;
