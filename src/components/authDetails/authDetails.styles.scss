@@ -22,6 +22,12 @@
   .auth-details-content {
     padding: 1rem;
     .patient-info {
+      .patient-info-title {
+        display: flex;
+        h5 {
+          margin-right: 0.5rem;
+        }
+      }
       h5, div {
         margin-bottom: 0.5rem;
       }

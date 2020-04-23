@@ -21,7 +21,12 @@ const AuthDetails = ({ findTarget }) => {
           <div className="auth-details-content container">
             <div className="row">
               <div className="patient-info col-4">
-                <h5>Patient Info <Button type="submit"><FaEdit /></Button></h5>
+                <div className="patient-info-title">
+                  <h5>Patient Info</h5>
+                  <Button type="submit">
+                    <FaEdit />
+                  </Button>
+                </div>
                 <div><strong>Name:</strong>{` ${targetNode.firstName} ${targetNode.lastName}`}</div>
                 <div><strong>SSN:</strong>{` ${targetNode.ssn}`}</div>
                 <div><strong>Date Of Birth:</strong> {`${targetNode.dob}`}</div>

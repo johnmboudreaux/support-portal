@@ -1,0 +1,10 @@
+@import '../shared/variables';
+
+.title {
+  margin-right: 0.5rem;
+}
+
+.custom-button {
+  background-color: $green-search;
+  border-radius: 3px;
+}

@@ -3,6 +3,7 @@ import Search from '../../components/search/search.component';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
 import AuthComposition from '../../components/authComposition/authComposition.component';
+import ServicesRequested from'../../components/servicesRequested/servicesRequested.component';
 import dataNodes from '../../data/authorization.json';
 
 import './authAdminPage.component.scss';
@@ -54,6 +55,7 @@ class AuthAdmin extends Component {
           <AuthDetails 
             findTarget={this.findTarget}  
           />
+          <ServicesRequested />
           <AuthDocument />
           <AuthComposition />
         </div>
