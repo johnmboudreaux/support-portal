@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { FaEdit } from 'react-icons/fa';
 import Button from '../../customButton/customButton.component';
+import CustomCheckBox from "../../checkbox/customCheckBox.component";
 
 import './modal.styles.scss';
 
@@ -21,7 +22,9 @@ const CustomModal = () => {
         <Modal.Header closeButton>
           <Modal.Title>Services Requested</Modal.Title>
         </Modal.Header>
-        <Modal.Body></Modal.Body>
+        <Modal.Body>
+          <CustomCheckBox type="checkbox" id="service"/>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

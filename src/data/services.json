@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "breath_alcohol"
+  },
+  {
+    "id": "2",
+    "name": "drug_screen"
+  },
+  {
+    "id": "3",
+    "name": "drug_screen_observation"
+  },
+  {
+    "id": "4",
+    "name": "disa"
+  },
+  {
+    "id": "5",
+    "name": "asap"
+  },
+  {
+    "id": "6",
+    "name": "motiva_testing"
+  },
+  {
+    "id": "7",
+    "name": "x-ray"
+  },
+  {
+    "id": "8",
+    "name": "lab-test"
+  },
+  {
+    "id": "9",
+    "name": "physical-exam"
+  }
+]
