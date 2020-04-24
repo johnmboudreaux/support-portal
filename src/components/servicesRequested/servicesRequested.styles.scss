@@ -1,10 +1,18 @@
 @import '../shared/variables';
 
-.title {
-  margin-right: 0.5rem;
-}
-
-.custom-button {
-  background-color: $medium-blue;
-  border-radius: 3px;
+.services-requested-list {
+  .btn-primary {
+    background-color: $medium-blue;
+    padding: 0.1rem;
+    svg {
+      width: 1rem;
+    }
+  }
+  .title {
+    margin-right: 0.5rem;
+  }
+  .custom-button {
+    background-color: $medium-blue;
+    border-radius: 3px;
+  }
 }

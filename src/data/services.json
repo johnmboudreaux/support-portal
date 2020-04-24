@@ -29,10 +29,46 @@
   },
   {
     "id": "8",
-    "name": "lab-test"
+    "name": "Lab Test"
   },
   {
     "id": "9",
-    "name": "physical-exam"
+    "name": "Physical Exam"
+  },
+  {
+    "id": "10",
+    "name": "FAA Exam - Appointment Required"
+  },
+  {
+    "id": "11",
+    "name": "Pulmanory Testing"
+  },
+  {
+    "id": "12",
+    "name": "Respirator Fit Test"
+  },
+  {
+    "id": "13",
+    "name": "Audigram"
+  },
+  {
+    "id": "14",
+    "name": "EKG"
+  },
+  {
+    "id": "15",
+    "name": "Vision Screen Only"
+  },
+  {
+    "id": "16",
+    "name": "Vaccinations"
+  },
+  {
+    "id": "17",
+    "name": "Nurse Visit Only"
+  },
+  {
+    "id": "18",
+    "name": "Saliva Alcohol"
   }
 ]
