@@ -21,6 +21,11 @@
 
   .auth-details-content {
     padding: 1rem;
+
+    .btn,
+    .custom-button {
+      background-color: $medium-blue;
+    }
     .patient-info {
       .patient-info-title {
         display: flex;
@@ -33,7 +38,6 @@
       }
 
       .custom-button {
-        background-color: $green-search;
         border-radius: 3px;
       }
     }
