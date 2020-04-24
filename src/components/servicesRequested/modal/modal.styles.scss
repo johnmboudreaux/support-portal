@@ -1,0 +1,11 @@
+@import '../../shared/variables';
+
+.services-requested-list {
+  .btn-primary {
+    background-color: $medium-blue;
+    padding: 0.1rem;
+    svg {
+      width: 1rem;
+    }
+  }
+}

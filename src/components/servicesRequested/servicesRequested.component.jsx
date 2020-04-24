@@ -1,17 +1,16 @@
 import React from 'react';
-import Button from '../customButton/customButton.component';
+import Modal from '../servicesRequested/modal/modal.component';
 import { ListGroup } from 'react-bootstrap';
-import { FaEdit } from 'react-icons/fa';
 
 import './servicesRequested.styles.scss';
 
 const ServicesRequested = () => (
-  <div className="services-requested container">
+  <div className="services-requested-list container">
     <div className="row">
       <div className="col-6">
         <div className=" row">
           <h5 className="title">Services Requested</h5>
-          <Button><FaEdit /></Button>
+          <Modal />
         </div>
         <div className="requested-service-list">
           <ListGroup>
