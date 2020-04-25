@@ -3,7 +3,9 @@ import { Modal } from 'react-bootstrap';
 import { FaEdit } from 'react-icons/fa';
 import Button from '../../customButton/customButton.component';
 import CustomCheckBox from "../../checkbox/customCheckBox.component";
+import CustomLabel from '../../label/label.component';
 
+import serviceNodes from '../../../data/services.json';
 import './modal.styles.scss';
 
 const CustomModal = () => {
@@ -23,7 +25,12 @@ const CustomModal = () => {
           <Modal.Title>Services Requested</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <CustomCheckBox type="checkbox" id="service"/>
+          {serviceNodes.map(node => (
+            <div key={node.id}>
+                <CustomCheckBox name={node.name} type="checkbox" id="service" />
+                <CustomLabel htmlFor="service">{node.name}</CustomLabel>
+            </div>
+          ))}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
