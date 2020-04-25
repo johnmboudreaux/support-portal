@@ -37,13 +37,13 @@ class ServicesRequested extends Component {
               <h5 className="title">Services Requested</h5>
               <Modal 
                 handleChange={this.handleChange}
-                state={this.state.value}
+                state={this.state.checkboxValues}
               />
             </div>
             <div className="requested-service-list">
             {
-              this.state.checkboxValues.map(service => (
-                <ListGroup>
+              this.state.checkboxValues.map((service, idx) => (
+                <ListGroup key={idx}>
                   <ListGroup.Item>{service}</ListGroup.Item>
                 </ListGroup>
               ))

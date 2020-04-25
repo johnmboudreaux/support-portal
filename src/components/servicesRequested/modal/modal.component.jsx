@@ -24,22 +24,38 @@ const CustomModal = ({ handleChange, state }) => {
           <Modal.Title>Services Requested</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {serviceNodes.map(node => (
-            <div key={node.id}>
+          {serviceNodes.map(node => {
+            if(state.includes(node.name)) {
+              return (
+                <div key={node.id}>
+                  <CustomCheckBox 
+                    checked={true}
+                    onChange={handleChange}
+                    name={node.name}
+                    type="checkbox" 
+                    id="service" 
+                  />
+                  <CustomLabel htmlFor="service">{node.name}</CustomLabel>
+                </div>
+              )
+            } else {
+            return (
+              <div key={node.id}>
                 <CustomCheckBox 
+                  checked={false}
                   onChange={handleChange}
                   name={node.name}
                   type="checkbox" 
                   id="service" 
                 />
                 <CustomLabel htmlFor="service">{node.name}</CustomLabel>
-            </div>
-          ))}
+                </div>
+              )
+            }
+            
+          })}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
           <Button variant="primary" onClick={handleClose}>
             Save Changes
           </Button>
