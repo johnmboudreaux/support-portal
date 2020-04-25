@@ -8,18 +8,17 @@ import CustomLabel from '../../label/label.component';
 import serviceNodes from '../../../data/services.json';
 import './modal.styles.scss';
 
-const CustomModal = () => {
+const CustomModal = ({ handleChange, state }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+ 
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
         <FaEdit />
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Services Requested</Modal.Title>
@@ -27,7 +26,12 @@ const CustomModal = () => {
         <Modal.Body>
           {serviceNodes.map(node => (
             <div key={node.id}>
-                <CustomCheckBox name={node.name} type="checkbox" id="service" />
+                <CustomCheckBox 
+                  onChange={handleChange}
+                  name={node.name}
+                  type="checkbox" 
+                  id="service" 
+                />
                 <CustomLabel htmlFor="service">{node.name}</CustomLabel>
             </div>
           ))}

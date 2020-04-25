@@ -1,31 +1,31 @@
 [
   {
     "id": "1",
-    "name": "breath_alcohol"
+    "name": "Breath Alcohol"
   },
   {
     "id": "2",
-    "name": "drug_screen"
+    "name": "Drug Screen"
   },
   {
     "id": "3",
-    "name": "drug_screen_observation"
+    "name": "Drug Screen Observation"
   },
   {
     "id": "4",
-    "name": "disa"
+    "name": "DISA"
   },
   {
     "id": "5",
-    "name": "asap"
+    "name": "ASAP"
   },
   {
     "id": "6",
-    "name": "motiva_testing"
+    "name": "Motiva Testing"
   },
   {
     "id": "7",
-    "name": "x-ray"
+    "name": "X-Ray"
   },
   {
     "id": "8",
