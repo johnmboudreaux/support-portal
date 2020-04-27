@@ -1,0 +1,50 @@
+[
+  {
+    "companyId": 4,
+    "companyTypeid": "2",
+    "CompanyName": "Prime Ocupational Medicine",
+    "Alias": "PRIME",
+    "Address1": "NULL",
+    "Address2": "NULL",
+    "Active": "1",
+    "AdressCity": "NULL",
+    "AddressState": "NULL",
+    "AddressPostalCode": "NULL"
+  },
+  {
+    "companyId": "5",
+    "companyTypeid": "2",
+    "CompanyName": "Prime/BatonRouge/Prairieville",
+    "Alias": "BatonRouge/Prairieville",
+    "Address1": "15475 Airline Hwy",
+    "Address2": "NULL",
+    "Active": "1",
+    "AdressCity": "Baton Rouge",
+    "AddressState": "LA",
+    "AddressPostalCode": "70817"
+  },
+  {
+    "companyId": "6",
+    "companyTypeid": "2",
+    "CompanyName": "Prime/Port Allen/Brusly",
+    "Alias": "Port Allen/Brusly",
+    "Address1": "3515 Hwy. 1 South",
+    "Address2": "NULL",
+    "Active": "1",
+    "AdressCity": "Port Allen",
+    "AddressState": "LA",
+    "AddressPostalCode": "70767"
+  },
+  {
+    "companyId": "7",
+    "companyTypeid": "2",
+    "CompanyName": "Prime/Reserve/Laplace",
+    "Alias": "Reserve/Laplace",
+    "Address1": "3584 W Airline Hwy.",
+    "Address2": "NULL",
+    "Active": "0",
+    "AdressCity": "Reserve",
+    "AddressState": "LA",
+    "AddressPostalCode": "70084"
+  }
+]
