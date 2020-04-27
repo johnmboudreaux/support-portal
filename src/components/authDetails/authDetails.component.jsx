@@ -36,11 +36,11 @@ const AuthDetails = ({ findTarget }) => {
                 <h5>Employer Info</h5>
                 <div className="company">
                   <strong>Company:</strong>
-                  <FormInput placeholder={`${targetNode.company}`}/>
+                  <FormInput placeholder={`${targetNode.company}`} />
                 </div>
                 <div className="job-number">
                   <strong>Job#:</strong>
-                  <FormInput placeholder={`${targetNode.jobNumber}`}/>
+                  <FormInput placeholder={`${targetNode.jobNumber}`} />
                 </div>
                 <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
                 <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>

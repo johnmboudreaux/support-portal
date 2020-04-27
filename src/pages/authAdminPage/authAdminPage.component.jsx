@@ -32,8 +32,8 @@ class AuthAdmin extends Component {
     });
   }
 
-  onDatesChange = ({ startDate, endDate }) => { 
-    this.setState({ startDate, endDate })
+  onDatesChange = ({ startDate, endDate }) => {
+    this.setState({ startDate, endDate });
   }
 
   findTarget = () => {
@@ -48,12 +48,12 @@ class AuthAdmin extends Component {
     return (
       <main className="container-fluid">
         <div className="main-content">
-          <Search 
+          <Search
             handleChange={this.handleChange}
             handleSearchClick={this.handleSearchClick}
           />
-          <AuthDetails 
-            findTarget={this.findTarget}  
+          <AuthDetails
+            findTarget={this.findTarget}
           />
           <ServicesRequested />
           <AuthDocument />
