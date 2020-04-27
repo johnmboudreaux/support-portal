@@ -4,7 +4,7 @@ import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
 import AuthComposition from '../../components/authComposition/authComposition.component';
 import ServicesRequested from'../../components/servicesRequested/servicesRequested.component';
-import dataNodes from '../../data/authorization.json';
+import dataNodes from '../../components/shared/data/authorization.json';
 
 import './authAdminPage.component.scss';
 

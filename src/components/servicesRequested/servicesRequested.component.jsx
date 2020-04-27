@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Modal from '../servicesRequested/modal/modal.component';
+import Modal from '../modal/modal.component';
 import { ListGroup } from 'react-bootstrap';
 
 import './servicesRequested.styles.scss';

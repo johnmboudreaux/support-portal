@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { FaEdit } from 'react-icons/fa';
-import Button from '../../customButton/customButton.component';
-import CustomCheckBox from "../../checkbox/customCheckBox.component";
-import CustomLabel from '../../label/label.component';
+import Button from '../customButton/customButton.component';
+import CustomCheckBox from '../checkbox/customCheckBox.component';
+import CustomLabel from '../label/label.component';
 
-import serviceNodes from '../../../data/services.json';
+import serviceNodes from '../shared/data/services.json';
 import './modal.styles.scss';
 
 const CustomModal = ({ handleChange, state }) => {
