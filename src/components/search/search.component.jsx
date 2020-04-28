@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from "react-redux";
 import FormInput from '../../components/form-input/form-input.component';
 import StatusSelect from '../../components/statusSelect/statusSelect.component';
 
@@ -15,4 +16,4 @@ const Search = ({ handleChange, handleSearchClick }) => (
   </div>
 );
 
-export default Search;
+export default connect(null, null)(Search);
