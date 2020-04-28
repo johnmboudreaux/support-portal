@@ -5,11 +5,17 @@ import Button from '../../components/customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
 import { FaEdit } from 'react-icons/fa';
 
+import dataNodes from '../shared/data/authorization.json';
+
 
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ findTarget }) => {  
-  const targetNode = findTarget();
+const AuthDetails = ({ findTarget, inputVal }) => { 
+  const targetNode = dataNodes.find(node => {
+    return  node.authorizationPatientId === inputVal ? node : null;
+  });
+
+  console.log(targetNode);
 
   if(targetNode) {
     return (
@@ -36,11 +42,11 @@ const AuthDetails = ({ findTarget }) => {
                 <h5>Employer Info</h5>
                 <div className="company">
                   <strong>Company:</strong>
-                  <FormInput placeholder={`${targetNode.company}`} />
+                  <FormInput placeholder={`${targetNode.company}`}/>
                 </div>
                 <div className="job-number">
                   <strong>Job#:</strong>
-                  <FormInput placeholder={`${targetNode.jobNumber}`} />
+                  <FormInput placeholder={`${targetNode.jobNumber}`}/>
                 </div>
                 <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
                 <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>
