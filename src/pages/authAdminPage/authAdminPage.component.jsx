@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 import { connect } from "react-redux";
-import * as InputValActions from '../../redux/actions/authAdmin.action';
+import { bindActionCreators } from 'redux';
+import * as inputValActions from '../../redux/actions/authAdmin.action';
 import Search from '../../components/search/search.component';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
@@ -29,7 +31,7 @@ class AuthAdmin extends Component {
   }
 
   handleSearchClick = () => {
-    this.props.dispatch(InputValActions.setInputVal(this.state.inputVal))
+    this.props.setInputVal.setInputVal(this.state.inputVal);
   }
 
   render() {
@@ -52,9 +54,19 @@ class AuthAdmin extends Component {
   }
 };
 
+AuthAdmin.propTypes = {
+  setInputVal: PropTypes.object
+}
+
 
 const mapStateToProps = (state) => ({
   inputVal: state.inputVal
-})
+});
 
-export default connect(mapStateToProps)(AuthAdmin);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setInputVal: bindActionCreators(inputValActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthAdmin);
