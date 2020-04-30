@@ -1,18 +1,8 @@
 import { combineReducers } from "redux";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import searchReducer from '../redux/search/search.reducer.jsx'
-import authDetailsReducer from '../redux/authDetails/authDetails.reducer.jsx';
-
-const persistConfig = {
-  key: "root",
-  storage
-  // whitelist: ["cart"]
-};
+import inputVal from '../redux/authAdmin/authAdmin.reducer.jsx';
 
 const rootReducer = combineReducers({
-  search: searchReducer,
-  authDetails: authDetailsReducer
+  inputVal
 });
 
-export default persistReducer(persistConfig, rootReducer);
+export default rootReducer;

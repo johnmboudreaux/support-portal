@@ -1,21 +1,18 @@
 import React from 'react';
 import { Form, Col } from 'react-bootstrap';
-import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.component';
+import { FaEdit } from 'react-icons/fa';
+import Label from '../label/label.component';
 import Button from '../../components/customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
-import { FaEdit } from 'react-icons/fa';
+import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.component';
 
 import dataNodes from '../shared/data/authorization.json';
-
-
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ findTarget, inputVal }) => { 
+const AuthDetails = ({ handleChange, handleSearchClick, inputVal }) => {
   const targetNode = dataNodes.find(node => {
     return  node.authorizationPatientId === inputVal ? node : null;
   });
-
-  console.log(targetNode);
 
   if(targetNode) {
     return (
@@ -41,12 +38,12 @@ const AuthDetails = ({ findTarget, inputVal }) => {
               <div className="employer-info col-4">
                 <h5>Employer Info</h5>
                 <div className="company">
-                  <strong>Company:</strong>
-                  <FormInput placeholder={`${targetNode.company}`}/>
+                  <Label><strong>Company:</strong></Label>
+                  <FormInput placeholder={`${targetNode.company}`} />
                 </div>
                 <div className="job-number">
                   <strong>Job#:</strong>
-                  <FormInput placeholder={`${targetNode.jobNumber}`}/>
+                  <FormInput placeholder={`${targetNode.jobNumber}`} />
                 </div>
                 <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
                 <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>

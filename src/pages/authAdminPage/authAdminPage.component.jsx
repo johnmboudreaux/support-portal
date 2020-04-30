@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import * as InputValActions from '../../redux/actions/authAdmin.action';
 import Search from '../../components/search/search.component';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
@@ -13,19 +15,21 @@ class AuthAdmin extends Component {
     this.state = {
       inputVal: '',
     }
-    this.stringToSet = '';
   }
 
   handleChange = (event) => {
-    this.stringToSet = event.currentTarget.value;
+    const inputVal = {
+      ...this.state.inputVal,
+      inputVal: event.target.value
+    }
+
+    this.setState({
+      inputVal
+    })
   }
 
   handleSearchClick = () => {
-    const stateInputVal = this.stringToSet;
-    
-    this.setState({
-      inputVal: stateInputVal
-    });
+    this.props.dispatch(InputValActions.setInputVal(this.state.inputVal))
   }
 
   render() {
@@ -48,4 +52,9 @@ class AuthAdmin extends Component {
   }
 };
 
-export default AuthAdmin;
+
+const mapStateToProps = (state) => ({
+  inputVal: state.inputVal
+})
+
+export default connect(mapStateToProps)(AuthAdmin);
