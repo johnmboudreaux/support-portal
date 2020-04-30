@@ -31,7 +31,9 @@ class AuthAdmin extends Component {
   }
 
   handleSearchClick = () => {
-    this.props.setInputVal.setInputVal(this.state.inputVal);
+    console.log(this.props.actions);
+    
+    this.props.actions.setInputVal(this.state.inputVal);
   }
 
   render() {
@@ -55,7 +57,8 @@ class AuthAdmin extends Component {
 };
 
 AuthAdmin.propTypes = {
-  setInputVal: PropTypes.object
+  setInputVal: PropTypes.object,
+  actions: PropTypes.object
 }
 
 
@@ -65,7 +68,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setInputVal: bindActionCreators(inputValActions, dispatch)
+    actions: bindActionCreators(inputValActions, dispatch)
   }
 }
 

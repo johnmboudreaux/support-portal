@@ -1,6 +1,8 @@
+import * as types from '../actions/actionTypes.js';
+
 const authAdminReducer = (state='', action) => {
   switch(action.type) {
-    case "SET_INPUT_VAL":
+    case types.SET_INPUT_VAL:
       return {
         ...state,
         inputVal: action.inputVal

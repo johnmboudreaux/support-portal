@@ -1,4 +1,6 @@
+import * as types from '../actions/actionTypes.js';
+
 export const setInputVal = (inputVal) => ({
-    type: "SET_INPUT_VAL",
+    type: types.SET_INPUT_VAL,
     inputVal
 });
