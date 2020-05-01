@@ -3,7 +3,7 @@ import { Button, InputGroup, FormControl } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 import './form-input.styles.scss';
 
-const FormInput = ({ handleChange, handleSearchClick, placeholder }) => {
+const FormInput = ({ placeholder }) => {
   
   return (
     <div className="group">
@@ -19,7 +19,7 @@ const FormInput = ({ handleChange, handleSearchClick, placeholder }) => {
         </InputGroup.Append>
       </InputGroup>
     </div>
-  )
-};
+  );
+}
 
 export default FormInput;

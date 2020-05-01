@@ -11,17 +11,17 @@ import dataNodes from '../shared/data/authorization.json';
 import './authDetails.styles.scss';
 
 const AuthDetails = ({ patient }) => {
-  const targetNode = dataNodes.find(node=> {
-    return  node.authorizationPatientId === patient.patientId ? node : null;
+  const targetPatient = dataNodes.find(patientNode => {
+    return  patientNode.authorizationPatientId === patient.patientId ? patientNode : null;
   });
 
-  if(targetNode) {
+  if(targetPatient) {
     return (
         <div 
           className="auth-details-wrapper"
-          key={`${targetNode.authorizationPatientId}`}
+          key={`${targetPatient.authorizationPatientId}`}
         >
-          <header><h5>Authorization {`${targetNode.authorizationPatientId} `} Details</h5></header>
+          <header><h5>Authorization {`${targetPatient.authorizationPatientId} `} Details</h5></header>
           <div className="auth-details-content container">
             <div className="row">
               <div className="patient-info col-4">
@@ -31,26 +31,26 @@ const AuthDetails = ({ patient }) => {
                     <FaEdit />
                   </Button>
                 </div>
-                <div><strong>Name:</strong>{` ${targetNode.firstName} ${targetNode.lastName}`}</div>
-                <div><strong>SSN:</strong>{` ${targetNode.ssn}`}</div>
-                <div><strong>Date Of Birth:</strong> {`${targetNode.dob}`}</div>
-                <div><strong>Phone:</strong> {` ${targetNode.phone}`}</div>
+                <div><strong>Name:</strong>{` ${targetPatient.firstName} ${targetPatient.lastName}`}</div>
+                <div><strong>SSN:</strong>{` ${targetPatient.ssn}`}</div>
+                <div><strong>Date Of Birth:</strong> {`${targetPatient.dob}`}</div>
+                <div><strong>Phone:</strong> {` ${targetPatient.phone}`}</div>
               </div>
               <div className="employer-info col-4">
                 <h5>Employer Info</h5>
                 <div className="company">
                   <Label><strong>Company:</strong></Label>
-                  <FormInput placeholder={`${targetNode.company}`} />
+                  <FormInput placeholder={`${targetPatient.company}`} />
                 </div>
                 <div className="job-number">
                   <strong>Job#:</strong>
-                  <FormInput placeholder={`${targetNode.jobNumber}`} />
+                  <FormInput placeholder={`${targetPatient.jobNumber}`} />
                 </div>
-                <div><strong>Authorizing Rep:</strong>{` ${targetNode.authRep}`}</div>
-                <div><strong>Rep Phone:</strong>{` ${targetNode.authRepPhone}`}</div>
+                <div><strong>Authorizing Rep:</strong>{` ${targetPatient.authRep}`}</div>
+                <div><strong>Rep Phone:</strong>{` ${targetPatient.authRepPhone}`}</div>
                 <div className="billing-group">
                   <strong>BillingGroup:</strong>
-                  <FormInput placeholder={`${targetNode.billingGroup}`}/>
+                  <FormInput placeholder={`${targetPatient.billingGroup}`}/>
                 </div>
               </div>
               <div className="visit-info col-4">
@@ -58,7 +58,7 @@ const AuthDetails = ({ patient }) => {
                 <div className="reason">
                   <Form.Group as={Col} controlId="formGridState">
                     <Form.Label><strong>Reason for Visit:</strong></Form.Label>
-                    <Form.Control as="select" defaultValue={`${targetNode.reason}`}>
+                    <Form.Control as="select" defaultValue={`${targetPatient.reason}`}>
                       <option>Choose...</option>
                       <option>...</option>
                     </Form.Control>
@@ -66,23 +66,23 @@ const AuthDetails = ({ patient }) => {
                 </div>
                 <div className="visit-date">
                   <strong>Date of Visit:</strong>
-                  <SingleDatePickerWrapper placeholderText={targetNode.visitDate}/>
+                  <SingleDatePickerWrapper placeholderText={targetPatient.visitDate}/>
                 </div>
                 <div className="purchase-order">
                   <strong>Purchase Order:</strong>
-                  <FormInput placeholder={`${targetNode.poNum}`}/>
+                  <FormInput placeholder={`${targetPatient.poNum}`}/>
                 </div>
                 <div className="clinic">
                   <strong>Clinic:</strong>
-                  <FormInput placeholder={`${targetNode.clinic}`}/>
+                  <FormInput placeholder={`${targetPatient.clinic}`}/>
                 </div>
                 <div className="provider">
                   <strong>Provider:</strong>
-                  <FormInput placeholder={`${targetNode.provider}`}/>
+                  <FormInput placeholder={`${targetPatient.provider}`}/>
                 </div>
                 <div className="check-in-status">
                   <strong>Check in Status:</strong>
-                  <FormInput placeholder={`${targetNode.status}`}/>
+                  <FormInput placeholder={`${targetPatient.status}`}/>
                 </div>
               </div>
             </div>
