@@ -32,6 +32,7 @@ class AuthAdmin extends Component {
       <main className="container-fluid">
         <div className="main-content">
           <Search
+            placeholder="Search for Authorization"
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />

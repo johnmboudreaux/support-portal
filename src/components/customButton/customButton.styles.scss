@@ -3,5 +3,9 @@
 button {
   background-color: $medium-blue;
   border: transparent;
+  border-radius: 20%;
   color: $white;
+  &:hover {
+    opacity: 0.8;
+  }
 }

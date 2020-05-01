@@ -1,25 +1,51 @@
 import React from 'react';
-import { Button, InputGroup, FormControl } from 'react-bootstrap';
-import { FaSearch } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+
 import './form-input.styles.scss';
 
-const FormInput = ({ placeholder }) => {
+const FormInput = ({
+  name,
+  type,
+  placeholder,
+  onChange,
+  className,
+  value,
+  error,
+  children,
+  label,
+  ...props
+}) => {
   
   return (
-    <div className="group">
-      <InputGroup className="mb-3">
-        <FormControl
-          aria-label="Search"
-          aria-describedby="basic-addon2"
-          placeholder={placeholder}
-          type="text" 
-        />
-        <InputGroup.Append>
-          <Button variant="outline-secondary"><FaSearch /></Button>
-        </InputGroup.Append>
-      </InputGroup>
-    </div>
-  );
+    <React.Fragment>
+      <label htmlFor={name}>{label}</label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+        value={value}
+        className={className}
+        style={error && {border: 'solid 1px red'}}
+      />
+      { error && <p>{ error }</p>}
+    </React.Fragment>
+  )
+}
+
+FormInput.defaultProps = {
+  type: "text",
+  className: ""
+}
+
+FormInput.propTypes = {
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['text', 'number', 'password']),
+  className: PropTypes.string,
+  value: PropTypes.any,
+  onChange: PropTypes.func.isRequired
 }
 
 export default FormInput;

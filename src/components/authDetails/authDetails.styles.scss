@@ -26,6 +26,7 @@
     .custom-button {
       background-color: $medium-blue;
     }
+
     .patient-info {
       .patient-info-title {
         display: flex;
@@ -36,8 +37,7 @@
       h5, div {
         margin-bottom: 0.5rem;
       }
-
-      .custom-button {
+      .patient-info-button {
         border-radius: 3px;
       }
     }
@@ -46,26 +46,20 @@
       div:nth-child(n+4):nth-child(-n+5) {
         margin-bottom: 0.5rem;
       }
-
       .company,
       .job-number,
       .billing-group {
         display: flex;
         align-items: baseline;
-        strong {
-          width: 15vw;
+        label {
+          margin-right: 0.5rem;
         }
-        .input-group {
-          width: 20vw;
-          .form-control {
-            height: 5vh;
-          }
-          button {
-            height: 5vh;
-            svg {
-              vertical-align: top;
-            }
-          }
+        input {
+          width: 100%;
+        }
+
+        .company-search-button {
+          border-radius: 3px;
         }
       }
     }
@@ -93,8 +87,8 @@
       }
       
       .visit-date {
-        strong {
-          margin-right: 1.5rem;
+        label {
+          margin-right: 0.5rem;
         }
       }
   
@@ -104,20 +98,12 @@
       .check-in-status {
         display: flex;
         align-items: baseline;
-        strong {
+        label {
+          margin-right: 0.5rem;
           width: 15vw;
         }
-        .input-group {
-          width: 20vw;
-          .form-control {
-            height: 5vh;
-          }
-          button {
-            height: 5vh;
-            svg {
-              vertical-align: top;
-            }
-          }
+        input {
+          width: 100%;
         }
       }
     }

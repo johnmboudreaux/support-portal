@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Col } from 'react-bootstrap';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaSearch } from 'react-icons/fa';
 import Label from '../label/label.component';
 import Button from '../../components/customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
@@ -11,9 +11,21 @@ import dataNodes from '../shared/data/authorization.json';
 import './authDetails.styles.scss';
 
 const AuthDetails = ({ patient }) => {
+
   const targetPatient = dataNodes.find(patientNode => {
     return  patientNode.authorizationPatientId === patient.patientId ? patientNode : null;
   });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('submitted');
+    
+  }
+  const handleChange = (event) => {
+    event.preventDefault();
+    console.log('changed');
+    
+  }
 
   if(targetPatient) {
     return (
@@ -27,9 +39,11 @@ const AuthDetails = ({ patient }) => {
               <div className="patient-info col-4">
                 <div className="patient-info-title">
                   <h5>Patient Info</h5>
-                  <Button type="submit">
-                    <FaEdit />
-                  </Button>
+                  <Button 
+                    type="submit"
+                    icon={<FaEdit />}
+                    className="patient-info-button"
+                  />
                 </div>
                 <div><strong>Name:</strong>{` ${targetPatient.firstName} ${targetPatient.lastName}`}</div>
                 <div><strong>SSN:</strong>{` ${targetPatient.ssn}`}</div>
@@ -40,17 +54,35 @@ const AuthDetails = ({ patient }) => {
                 <h5>Employer Info</h5>
                 <div className="company">
                   <Label><strong>Company:</strong></Label>
-                  <FormInput placeholder={`${targetPatient.company}`} />
+                  <FormInput
+                    placeholder={targetPatient.company}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name='Company'
+                  />
+                  <Button icon={<FaSearch />}className="company-search-button"/>
                 </div>
                 <div className="job-number">
-                  <strong>Job#:</strong>
-                  <FormInput placeholder={`${targetPatient.jobNumber}`} />
+                  <Label><strong>Job#:</strong></Label>
+                  <FormInput
+                    placeholder={targetPatient.jobNumber}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name='Job'
+                  />
+                  <Button icon={<FaSearch />}/>
                 </div>
-                <div><strong>Authorizing Rep:</strong>{` ${targetPatient.authRep}`}</div>
-                <div><strong>Rep Phone:</strong>{` ${targetPatient.authRepPhone}`}</div>
+                <div><Label><strong>Authorizing Rep:</strong></Label>{` ${targetPatient.authRep}`}</div>
+                <div><Label><strong>Rep Phone:</strong></Label>{` ${targetPatient.authRepPhone}`}</div>
                 <div className="billing-group">
-                  <strong>BillingGroup:</strong>
-                  <FormInput placeholder={`${targetPatient.billingGroup}`}/>
+                  <Label><strong>BillingGroup:</strong></Label>
+                  <FormInput
+                    placeholder={targetPatient.billingGroup}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name='billing-group'
+                  />
+                  <Button icon={<FaSearch />}/>
                 </div>
               </div>
               <div className="visit-info col-4">
@@ -65,24 +97,48 @@ const AuthDetails = ({ patient }) => {
                   </Form.Group>
                 </div>
                 <div className="visit-date">
-                  <strong>Date of Visit:</strong>
+                  <Label><strong>Date of Visit:</strong></Label>
                   <SingleDatePickerWrapper placeholderText={targetPatient.visitDate}/>
                 </div>
                 <div className="purchase-order">
-                  <strong>Purchase Order:</strong>
-                  <FormInput placeholder={`${targetPatient.poNum}`}/>
+                  <Label><strong>Purchase Order:</strong></Label>
+                  <FormInput
+                    placeholder={targetPatient.poNum}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name='billing-group'
+                  />
+                  <Button icon={<FaSearch />}/>
                 </div>
                 <div className="clinic">
-                  <strong>Clinic:</strong>
-                  <FormInput placeholder={`${targetPatient.clinic}`}/>
+                  <Label><strong>Clinic:</strong></Label>
+                  <FormInput
+                    placeholder={targetPatient.clinic}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name='clinic'
+                  />
+                  <Button icon={<FaSearch />}/>
                 </div>
                 <div className="provider">
-                  <strong>Provider:</strong>
-                  <FormInput placeholder={`${targetPatient.provider}`}/>
+                  <Label><strong>Provider:</strong></Label>
+                  <FormInput
+                    placeholder={targetPatient.provider}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name='provider'
+                  />
+                  <Button icon={<FaSearch />}/>
                 </div>
                 <div className="check-in-status">
-                  <strong>Check in Status:</strong>
-                  <FormInput placeholder={`${targetPatient.status}`}/>
+                  <Label><strong>Check in Status:</strong></Label>
+                  <FormInput
+                    placeholder={targetPatient.status}
+                    onSubmit={handleSubmit}
+                    onChange={handleChange}
+                    name="status"
+                  />
+                  <Button icon={<FaSearch />}/>
                 </div>
               </div>
             </div>
