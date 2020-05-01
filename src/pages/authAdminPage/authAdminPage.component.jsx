@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import * as patientActions from '../../redux/actions/patient.action';
-import Button from '../../components/customButton/customButton.component';
+import Search from '../../components/search/search.component';
 import AuthDetails from '../../components/authDetails/authDetails.component';
 import AuthDocument from '../../components/authDocuments/authDocuments.component';
 import AuthComposition from '../../components/authComposition/authComposition.component';
@@ -31,17 +31,17 @@ class AuthAdmin extends Component {
     return (
       <main className="container-fluid">
         <div className="main-content">
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange} />
-          <Button>click</Button>
-        </form>
+          <Search
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
           <AuthDetails />
           <ServicesRequested />
           <AuthDocument />
           <AuthComposition />
         </div>
       </main>
-    )
+    );
   }
 };
 

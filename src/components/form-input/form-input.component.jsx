@@ -11,8 +11,6 @@ const FormInput = ({ handleChange, handleSearchClick, placeholder }) => {
         <FormControl
           aria-label="Search"
           aria-describedby="basic-addon2"
-          // onSubmit={handleSearchClick}
-          // onChange={handleChange}
           placeholder={placeholder}
           type="text" 
         />
