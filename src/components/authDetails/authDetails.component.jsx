@@ -10,11 +10,9 @@ import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.compon
 import dataNodes from '../shared/data/authorization.json';
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ inputVal2 }) => {
-    console.log(inputVal2);
-  
+const AuthDetails = ({ patient }) => {
   const targetNode = dataNodes.find(node=> {
-    return  node.authorizationPatientId === inputVal2 ? node : null;
+    return  node.authorizationPatientId === patient.patientId ? node : null;
   });
 
   if(targetNode) {
@@ -128,11 +126,8 @@ const AuthDetails = ({ inputVal2 }) => {
   }
 };
 
-const mapStateToProps = (state) => {
-  // debugger;
-  return {
-    inputVal2: state.val
-  }
-};
+const mapStateToProps = (state) => ({
+    patient: state.patient
+});
 
 export default connect(mapStateToProps)(AuthDetails);

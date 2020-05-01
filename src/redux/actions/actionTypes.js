@@ -1,1 +1,1 @@
-export const SET_INPUT_VAL = 'SET_INPUT_VAL'
+export const SET_PATIENT_ID_VALUE = 'SET_PATIENT_ID_VALUE'

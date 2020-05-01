@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import val from '../redux/authAdmin/authAdmin.reducer.jsx';
+import patient from '../redux/patient/patient.reducer.jsx';
 
 const rootReducer = combineReducers({
-  val
+  patient
 });
 
 export default rootReducer;
