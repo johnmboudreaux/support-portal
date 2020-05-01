@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Form, Col } from 'react-bootstrap';
 import { FaEdit } from 'react-icons/fa';
 import Label from '../label/label.component';
@@ -9,9 +10,11 @@ import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.compon
 import dataNodes from '../shared/data/authorization.json';
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ handleChange, handleSearchClick, inputVal }) => {
-  const targetNode = dataNodes.find(node => {
-    return  node.authorizationPatientId === inputVal ? node : null;
+const AuthDetails = ({ inputVal2 }) => {
+    console.log(inputVal2);
+  
+  const targetNode = dataNodes.find(node=> {
+    return  node.authorizationPatientId === inputVal2 ? node : null;
   });
 
   if(targetNode) {
@@ -125,4 +128,11 @@ const AuthDetails = ({ handleChange, handleSearchClick, inputVal }) => {
   }
 };
 
-export default AuthDetails;
+const mapStateToProps = (state) => {
+  // debugger;
+  return {
+    inputVal2: state.val
+  }
+};
+
+export default connect(mapStateToProps)(AuthDetails);

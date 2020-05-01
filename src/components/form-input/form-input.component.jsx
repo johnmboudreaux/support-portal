@@ -11,12 +11,13 @@ const FormInput = ({ handleChange, handleSearchClick, placeholder }) => {
         <FormControl
           aria-label="Search"
           aria-describedby="basic-addon2"
-          onChange={handleChange}
+          // onSubmit={handleSearchClick}
+          // onChange={handleChange}
           placeholder={placeholder}
           type="text" 
         />
         <InputGroup.Append>
-          <Button onClick={handleSearchClick} variant="outline-secondary"><FaSearch /></Button>
+          <Button variant="outline-secondary"><FaSearch /></Button>
         </InputGroup.Append>
       </InputGroup>
     </div>
