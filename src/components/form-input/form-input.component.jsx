@@ -17,7 +17,7 @@ const FormInput = ({
 }) => {
   
   return (
-    <React.Fragment>
+    <form>
       <label htmlFor={name}>{label}</label>
       <input
         id={name}
@@ -30,7 +30,7 @@ const FormInput = ({
         style={error && {border: 'solid 1px red'}}
       />
       { error && <p>{ error }</p>}
-    </React.Fragment>
+    </form>
   )
 }
 
@@ -41,7 +41,7 @@ FormInput.defaultProps = {
 
 FormInput.propTypes = {
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   type: PropTypes.oneOf(['text', 'number', 'password']),
   className: PropTypes.string,
   value: PropTypes.any,
