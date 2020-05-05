@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Form, Col } from 'react-bootstrap';
 import { FaEdit, FaSearch } from 'react-icons/fa';
 import BillingGroup from '../billingGroup/billingGroup.component';
 import Button from '../customButton/customButton.component';
-import Label from '../label/label.component';
 import Company from "../company/company.component";
 import FormInput from '../form-input/form-input.component';
 import JobNumber from '../jobNumber/jobNumber.component';
+import Label from '../label/label.component';
+import Reason from '../reason/reason.component';
 import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.component';
 
 import './authDetails.styles.scss';
@@ -56,15 +56,7 @@ const AuthDetails = ({ patient }) => {
               </div>
               <div className="visit-info col-4">
                 <h5>Visit Info</h5>
-                <div className="reason">
-                  <Form.Group as={Col} controlId="formGridState">
-                    <Form.Label><strong>Reason for Visit:</strong></Form.Label>
-                    <Form.Control as="select" defaultValue={`${patient.reason}`}>
-                      <option>Choose...</option>
-                      <option>...</option>
-                    </Form.Control>
-                  </Form.Group>
-                </div>
+                <Reason />
                 <div className="visit-date">
                   <Label><strong>Date of Visit:</strong></Label>
                   <SingleDatePickerWrapper placeholderText={patient.visitDate}/>
