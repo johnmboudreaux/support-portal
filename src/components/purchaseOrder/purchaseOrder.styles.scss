@@ -1,0 +1,11 @@
+.purchase-order {
+  display: flex;
+  align-items: baseline;
+
+  label {
+    margin-right: 0.5rem;
+  }
+  .po-btn {
+    border-radius: 3px;
+  }
+}

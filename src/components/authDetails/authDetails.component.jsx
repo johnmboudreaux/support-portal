@@ -7,8 +7,9 @@ import Company from "../company/company.component";
 import FormInput from '../form-input/form-input.component';
 import JobNumber from '../jobNumber/jobNumber.component';
 import Label from '../label/label.component';
+import PurchaseOrder from "../purchaseOrder/purchaseOrder.component";
 import Reason from '../reason/reason.component';
-import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.component';
+import VisitDate from '../visitDate/visitDate.component';
 
 import './authDetails.styles.scss';
 
@@ -57,23 +58,8 @@ const AuthDetails = ({ patient }) => {
               <div className="visit-info col-4">
                 <h5>Visit Info</h5>
                 <Reason />
-                <div className="visit-date">
-                  <Label><strong>Date of Visit:</strong></Label>
-                  <SingleDatePickerWrapper placeholderText={patient.visitDate}/>
-                </div>
-                <div className="purchase-order">
-                  <Label><strong>Purchase Order:</strong></Label>
-                  <FormInput
-                    placeholder={patient.poNum}
-                    onChange={handleChange}
-                    name='purchase-order'
-                  />
-                  <Button
-                    icon={<FaSearch />}
-                    onClick={handleClick}
-                    type='submit'
-                  />
-                </div>
+                <VisitDate />
+                <PurchaseOrder />
                 <div className="clinic">
                   <Label><strong>Clinic:</strong></Label>
                   <FormInput
