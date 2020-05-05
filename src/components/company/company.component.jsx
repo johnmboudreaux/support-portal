@@ -20,11 +20,13 @@ const Company = ({ patient }) => {
   return (
     <div className="company">
       <FormInput
+        disabled={true}
         htmlFor="Company"
         label="Company:"
-        placeholder={patient.company}
-        onChange={handleChange}
         name='Company'
+        onChange={handleChange}
+        placeholder={patient.company}
+        type="text"
       />
       <Button
         className="company-btn"

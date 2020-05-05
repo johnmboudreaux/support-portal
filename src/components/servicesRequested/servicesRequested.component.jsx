@@ -41,13 +41,13 @@ class ServicesRequested extends Component {
               />
             </div>
             <div className="requested-service-list">
-            {
-              this.state.checkboxValues.map((service, idx) => (
-                <ListGroup key={idx}>
-                  <ListGroup.Item>{service}</ListGroup.Item>
-                </ListGroup>
-              ))
-            }
+              {
+                this.state.checkboxValues.map((service, idx) => (
+                  <ListGroup key={idx}>
+                    <ListGroup.Item>{service}</ListGroup.Item>
+                  </ListGroup>
+                ))
+              }
             </div>
           </div>
           <div className="col-6">

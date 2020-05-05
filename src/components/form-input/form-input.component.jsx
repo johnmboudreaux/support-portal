@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 import './form-input.styles.scss';
 
 const FormInput = ({
-  name,
-  type,
-  placeholder,
-  onChange,
-  className,
-  value,
-  error,
   children,
+  className,
+  disabled,
+  error,
   label,
+  name,
+  onChange,
+  placeholder,
+  type,
+  value,
   ...props
 }) => {
   
@@ -20,14 +21,15 @@ const FormInput = ({
     <form>
       <label htmlFor={name}>{label}</label>
       <input
+        className={className}
+        disabled={disabled}
         id={name}
         name={name}
-        type={type}
-        placeholder={placeholder}
         onChange={onChange}
-        value={value}
-        className={className}
+        placeholder={placeholder}
         style={error && {border: 'solid 1px red'}}
+        type={type}
+        value={value}
       />
       { error && <p>{ error }</p>}
     </form>
@@ -40,12 +42,13 @@ FormInput.defaultProps = {
 }
 
 FormInput.propTypes = {
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
-  type: PropTypes.oneOf(['text', 'number', 'password']),
   className: PropTypes.string,
+  disabled: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
   value: PropTypes.any,
-  onChange: PropTypes.func.isRequired
+  type: PropTypes.oneOf(['text', 'number', 'password'])
 }
 
 export default FormInput;

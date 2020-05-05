@@ -10,34 +10,38 @@ const Header = () => (
     </div>
     <div className="header-nav">
       <ul>
-        <li><FaTachometerAlt />
-            <DropdownButton id="dropdown-basic-button" title="Dashboard">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </DropdownButton>
+        <li>
+          <FaTachometerAlt />
+          <DropdownButton id="dropdown-basic-button" title="Dashboard">
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
         </li>
         <li><FaRegAddressCard /><a href="#">New Authorization</a></li>
-        <li><FaChartLine />
+        <li>
+          <FaChartLine />
           <DropdownButton id="dropdown-basic-button" title="Financials">
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
           </DropdownButton>
         </li>
-        <li><FaRegChartBar />
-            <DropdownButton id="dropdown-basic-button" title="Reports">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </DropdownButton>
+        <li>
+          <FaRegChartBar />
+          <DropdownButton id="dropdown-basic-button" title="Reports">
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
         </li>
-        <li><FaCog />
-            <DropdownButton id="dropdown-basic-button" title="Administration">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </DropdownButton>
+        <li>
+          <FaCog />
+          <DropdownButton id="dropdown-basic-button" title="Administration">
+            <Dropdown.Item href="#/action-1">Projects</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Facilities</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
         </li>
       </ul>
       <div className="user-nav">

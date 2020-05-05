@@ -16,9 +16,11 @@ const CustomModal = ({ handleChange, state }) => {
  
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        <FaEdit />
-      </Button>
+      <Button
+        icon={<FaEdit />}
+        onClick={handleShow}
+        variant="primary"
+      />
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Services Requested</Modal.Title>

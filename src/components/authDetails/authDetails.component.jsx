@@ -16,6 +16,11 @@ import VisitDate from '../visitDate/visitDate.component';
 import './authDetails.styles.scss';
 
 const AuthDetails = ({ patient }) => {
+  const handleClick = () => {
+    console.log('authdetails clicked');
+    
+  }
+
   if(patient) {
     return (
         <div 
@@ -29,9 +34,10 @@ const AuthDetails = ({ patient }) => {
                 <div className="patient-info-title">
                   <h5>Patient Info</h5>
                   <Button 
-                    type="submit"
-                    icon={<FaEdit />}
                     className="patient-info-button"
+                    icon={<FaEdit />}
+                    onClick={handleClick}
+                    type="submit"
                   />
                 </div>
                 <div><strong>Name:</strong>{` ${patient.firstName} ${patient.lastName}`}</div>
@@ -60,41 +66,43 @@ const AuthDetails = ({ patient }) => {
           </div>
         </div>
     );
-  } else {
-    return (
-      <div className="auth-details-wrapper">
-        <header><h5>Authorization Details</h5></header>
-        <div className="auth-details-content container">
-          <div className="row">
-            <div className="patient-info col-4">
-              <h5>Patient Info</h5>
-              <div><strong>Name:</strong></div>
-              <div><strong>SSN:</strong></div>
-              <div><strong>Date Of Birth:</strong></div>
-              <div><strong>Phone:</strong></div>
-            </div>
-            <div className="employer-info col-4">
-              <h5>Employer Info</h5>
-              <div><strong>Company:</strong></div>
-              <div><strong>Job #:</strong></div>
-              <div><strong>Authorizing Rep:</strong></div>
-              <div><strong>Rep Phone:</strong></div>
-              <div><strong>Billing Group:</strong></div>
-            </div>
-            <div className="visit-info col-4">
-              <h5>Visit Info</h5>
-              <div><strong>Reason for Visit:</strong></div>
-              <div><strong>Date of Visit:</strong></div>
-              <div><strong>Purchase Order:</strong></div>
-              <div><strong>Clinic:</strong></div>
-              <div><strong>Provider:</strong></div>
-              <div><strong>Check in Status:</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  } 
+  
+  // else {
+  //   return (
+  //     <div className="auth-details-wrapper">
+  //       <header><h5>Authorization Details</h5></header>
+  //       <div className="auth-details-content container">
+  //         <div className="row">
+  //           <div className="patient-info col-4">
+  //             <h5>Patient Info</h5>
+  //             <div><strong>Name:</strong></div>
+  //             <div><strong>SSN:</strong></div>
+  //             <div><strong>Date Of Birth:</strong></div>
+  //             <div><strong>Phone:</strong></div>
+  //           </div>
+  //           <div className="employer-info col-4">
+  //             <h5>Employer Info</h5>
+  //             <div><strong>Company:</strong></div>
+  //             <div><strong>Job #:</strong></div>
+  //             <div><strong>Authorizing Rep:</strong></div>
+  //             <div><strong>Rep Phone:</strong></div>
+  //             <div><strong>Billing Group:</strong></div>
+  //           </div>
+  //           <div className="visit-info col-4">
+  //             <h5>Visit Info</h5>
+  //             <div><strong>Reason for Visit:</strong></div>
+  //             <div><strong>Date of Visit:</strong></div>
+  //             <div><strong>Purchase Order:</strong></div>
+  //             <div><strong>Clinic:</strong></div>
+  //             <div><strong>Provider:</strong></div>
+  //             <div><strong>Check in Status:</strong></div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 };
 
 const mapStateToProps = (state) => ({
