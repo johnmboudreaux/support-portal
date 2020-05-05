@@ -36,15 +36,7 @@ const Company = ({ patient }) => {
 }
 
 Company.propTypes = {
-  className: PropTypes.string,
-  htmlFor: PropTypes.string,
-  icon: PropTypes.object,
-  label: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  patient: PropTypes.object,
-  placeholder: PropTypes.string
+  patient: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({

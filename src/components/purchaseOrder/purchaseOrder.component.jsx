@@ -20,7 +20,6 @@ const PurchaseOrder = ({ patient }) => {
 
   return ( 
     <div className="purchase-order">
-      {/* <Label><strong>Job#:</strong></Label> */}
       <FormInput
         htmlFor="Purchase Order"
         label="Purchase Order:"
@@ -38,15 +37,7 @@ const PurchaseOrder = ({ patient }) => {
 };
 
 PurchaseOrder.propTypes = {
-  className: PropTypes.string,
-  htmlFor: PropTypes.string,
-  icon: PropTypes.object,
-  label: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  patient: PropTypes.object,
-  placeholder: PropTypes.string
+  patient: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({

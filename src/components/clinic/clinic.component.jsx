@@ -6,29 +6,29 @@ import PropTypes from 'prop-types';
 import Button from '../customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
 
-import './jobNumber.styles.scss';
+import './clinic.styles.scss';
 
-const JobNumber = ({ patient }) => {
+const Clinic = ({ patient }) => {
   const handleClick = () => {
-    console.log('jobNumber clicked');
+    console.log('clinic clicked');
     
   }
 
   const handleChange = (e) => {
-    console.log('jobnumber changed');
+    console.log('clinic changed');
   }
 
   return ( 
-    <div className="job-number">
+    <div className="clinic">
       <FormInput
-        htmlFor="Job Number"
-        label="Job Number:"
-        placeholder={patient.jobNumber}
+        htmlFor="Clinic"
+        label="Clinic:"
+        placeholder={patient.clinic}
         onChange={handleChange}
-        name='Job'
+        name='Clinic'
       />
       <Button
-        className="job-btn"
+        className="clinic-btn"
         icon={<FaSearch />}
         onClick={handleClick}
       />
@@ -36,7 +36,7 @@ const JobNumber = ({ patient }) => {
   );
 };
 
-JobNumber.propTypes = {
+Clinic.propTypes = {
   patient: PropTypes.object
 }
 
@@ -44,4 +44,4 @@ const mapStateToProps = (state) => ({
     patient: state.patient
 });
 
-export default connect(mapStateToProps)(JobNumber);
+export default connect(mapStateToProps)(Clinic);

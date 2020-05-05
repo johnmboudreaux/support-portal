@@ -25,9 +25,6 @@ const Reason = ({ patient }) => {
 }
 
 Reason.propTypes = {
-  as: PropTypes.string,
-  defaultValue: PropTypes.string,
-  onChange: PropTypes.func,
   patient: PropTypes.object
 }
 

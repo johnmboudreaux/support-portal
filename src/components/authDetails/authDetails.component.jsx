@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { FaEdit, FaSearch } from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 import BillingGroup from '../billingGroup/billingGroup.component';
 import Button from '../customButton/customButton.component';
+import CheckInStatus from '../checkInStatus/checkInStatus.component';
+import Clinic from '../clinic/clinic.component';
 import Company from "../company/company.component";
-import FormInput from '../form-input/form-input.component';
 import JobNumber from '../jobNumber/jobNumber.component';
 import Label from '../label/label.component';
+import Provider from '../provider/provider.component';
 import PurchaseOrder from "../purchaseOrder/purchaseOrder.component";
 import Reason from '../reason/reason.component';
 import VisitDate from '../visitDate/visitDate.component';
@@ -14,16 +16,6 @@ import VisitDate from '../visitDate/visitDate.component';
 import './authDetails.styles.scss';
 
 const AuthDetails = ({ patient }) => {
-  const handleClick = (event) => {
-    event.preventDefault();
-    // event.preventDefault();
-    console.log(event.target.value);
-  }
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    // event.preventDefault();
-  }
-
   if(patient) {
     return (
         <div 
@@ -60,33 +52,9 @@ const AuthDetails = ({ patient }) => {
                 <Reason />
                 <VisitDate />
                 <PurchaseOrder />
-                <div className="clinic">
-                  <Label><strong>Clinic:</strong></Label>
-                  <FormInput
-                    placeholder={patient.clinic}
-                    onChange={handleChange}
-                    name='clinic'
-                  />
-                  <Button onClick={handleClick} icon={<FaSearch />}/>
-                </div>
-                <div className="provider">
-                  <Label><strong>Provider:</strong></Label>
-                  <FormInput
-                    placeholder={patient.provider}
-                    onChange={handleChange}
-                    name='provider'
-                  />
-                  <Button onClick={handleClick} icon={<FaSearch />}/>
-                </div>
-                <div className="check-in-status">
-                  <Label><strong>Check in Status:</strong></Label>
-                  <FormInput
-                    placeholder={patient.status}
-                    onChange={handleChange}
-                    name="status"
-                  />
-                  <Button onClick={handleClick} icon={<FaSearch />}/>
-                </div>
+                <Clinic />
+                <Provider />
+                <CheckInStatus />
               </div>
             </div>
           </div>
