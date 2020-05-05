@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Form, Col } from 'react-bootstrap';
 import { FaEdit, FaSearch } from 'react-icons/fa';
+import BillingGroup from '../billingGroup/billingGroup.component';
+import Button from '../customButton/customButton.component';
 import Label from '../label/label.component';
-import Button from '../../components/customButton/customButton.component';
 import Company from "../company/company.component";
 import FormInput from '../form-input/form-input.component';
 import JobNumber from '../jobNumber/jobNumber.component';
@@ -49,26 +50,9 @@ const AuthDetails = ({ patient }) => {
                 <h5>Employer Info</h5>
                 <Company />
                 <JobNumber />
-                {/* <div className="job-number">
-                  <Label><strong>Job#:</strong></Label>
-                  <FormInput
-                    buttonIcon={<FaSearch />}
-                    placeholder={patient.jobNumber}
-                    onChange={handleChange}
-                    name='Job'
-                  />
-                </div> */}
                 <div><Label><strong>Authorizing Rep:</strong></Label>{` ${patient.authRep}`}</div>
                 <div><Label><strong>Rep Phone:</strong></Label>{` ${patient.authRepPhone}`}</div>
-                <div className="billing-group">
-                  <Label><strong>BillingGroup:</strong></Label>
-                  <FormInput
-                    placeholder={patient.billingGroup}
-                    onChange={handleChange}
-                    name='billing-group'
-                  />
-                  <Button onClick={handleClick} icon={<FaSearch />}/>
-                </div>
+                <BillingGroup />
               </div>
               <div className="visit-info col-4">
                 <h5>Visit Info</h5>

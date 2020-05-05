@@ -46,17 +46,6 @@
       div:nth-child(n+4):nth-child(-n+5) {
         margin-bottom: 0.5rem;
       }
-      
-      .billing-group {
-        display: flex;
-        align-items: baseline;
-        label {
-          margin-right: 0.5rem;
-        }
-        input {
-          width: 100%;
-        }
-      }
     }
 
     .visit-info {

@@ -1,0 +1,11 @@
+.billing-group {
+  display: flex;
+  align-items: baseline;
+
+  label {
+    margin-right: 0.5rem;
+  }
+  .billing-group-btn {
+    border-radius: 3px;
+  }
+}
