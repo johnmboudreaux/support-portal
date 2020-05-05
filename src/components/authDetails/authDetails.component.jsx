@@ -6,6 +6,7 @@ import Label from '../label/label.component';
 import Button from '../../components/customButton/customButton.component';
 import Company from "../company/company.component";
 import FormInput from '../form-input/form-input.component';
+import JobNumber from '../jobNumber/jobNumber.component';
 import SingleDatePickerWrapper from '../singleDatePicker/singleDatePicker.component';
 
 import './authDetails.styles.scss';
@@ -47,7 +48,8 @@ const AuthDetails = ({ patient }) => {
               <div className="employer-info col-4">
                 <h5>Employer Info</h5>
                 <Company />
-                <div className="job-number">
+                <JobNumber />
+                {/* <div className="job-number">
                   <Label><strong>Job#:</strong></Label>
                   <FormInput
                     buttonIcon={<FaSearch />}
@@ -55,7 +57,7 @@ const AuthDetails = ({ patient }) => {
                     onChange={handleChange}
                     name='Job'
                   />
-                </div>
+                </div> */}
                 <div><Label><strong>Authorizing Rep:</strong></Label>{` ${patient.authRep}`}</div>
                 <div><Label><strong>Rep Phone:</strong></Label>{` ${patient.authRepPhone}`}</div>
                 <div className="billing-group">

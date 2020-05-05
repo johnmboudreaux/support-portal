@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { FaSearch } from 'react-icons/fa';
 import Button from "../customButton/customButton.component";
 import FormInput from '../form-input/form-input.component';
-import Label from '../label/label.component';
 
+import './company.styles.scss';
 
 const Company = ({ patient }) => {
   const handleClick = () => {
@@ -17,16 +17,19 @@ const Company = ({ patient }) => {
   }
 
   return (
-    <div>
-      <Label><strong>Company:</strong></Label>
+    <div className="company">
       <FormInput
+        htmlFor="Company"
+        label="Company:"
         placeholder={patient.company}
         onChange={handleChange}
         name='Company'
-        buttonIcon={<FaSearch />}
+      />
+      <Button
+        className="company-btn"
+        icon={<FaSearch />}
         onClick={handleClick}
       />
-      <Button onClick={handleClick}/>
     </div>
   )
 }
