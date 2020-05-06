@@ -7,14 +7,13 @@ import FormInput from '../form-input/form-input.component';
 
 import './company.styles.scss';
 
-const Company = ({ disabled, patient }) => {
+const Company = ({ patient }) => {
   return (
     <div className="company">
       <FormInput
-        disabled={disabled}
         htmlFor="Company"
         label="Company:"
-        name='Company'
+        name="Company"
         placeholder={patient.company}
         type="text"
       />

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as patientActions from '../../redux/actions/patient.action';
 import { FaEdit } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import BillingGroup from '../billingGroup/billingGroup.component';
@@ -21,25 +23,36 @@ class AuthDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      disabled: true
+      pointerEvent: "none"
     }
   }
 
-  handleClick = () => {
-    this.setState({
-      disabled: !this.state.disabled
-    })
+  handleClick = (event) => {
+    const targ = document.querySelector('.auth-details-content');
+
+    if(this.state.pointerEvent === "none") {
+      targ.classList.toggle('auth-details-content-gate');
+      this.setState({
+        pointerEvent: "all"
+      });
+    } else if(this.state.pointerEvent === "all") {
+      targ.classList.toggle('auth-details-content-gate');
+      this.setState({
+        pointerEvent: "none"
+      });
+
+    }
   }
 
   render() {
     return (
         <div 
           className="auth-details-wrapper"
-          key={`${this.props.authorizationPatientId}`}
+          key={`${this.props.patient.authorizationPatientId}`}
         >
           <header>
             <h5>
-              Authorization {`${this.props.authorizationPatientId} `} Details
+              Authorization {`${this.props.patient.authorizationPatientId} `} Details
             </h5>
             <Button 
               className="edit-authorization-btn"
@@ -48,12 +61,12 @@ class AuthDetails extends Component {
               type="submit"
             />
           </header>
-          <div className="auth-details-content container">
+          <div className="auth-details-content auth-details-content-gate container">
             <div className="row">
               <PatientInfo />
               <div className="employer-info col-4">
                 <h5>Employer Info</h5>
-                <Company disabled={this.state.disabled} />
+                <Company />
                 <JobNumber />
                 <div><Label><strong>Authorizing Rep:</strong></Label>{` ${this.props.patient.authRep}`}</div>
                 <div><Label><strong>Rep Phone:</strong></Label>{` ${this.props.patient.authRepPhone}`}</div>

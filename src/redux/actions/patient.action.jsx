@@ -9,5 +9,5 @@ export const setPatientIdVal = (patientId) => {
     return {
         type: types.SET_PATIENT_ID_VALUE,
         patient: targetPatient
-    }
-};
+    };
+}
