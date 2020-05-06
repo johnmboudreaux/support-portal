@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FaEdit } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import BillingGroup from '../billingGroup/billingGroup.component';
 import Button from '../customButton/customButton.component';
 import CheckInStatus from '../checkInStatus/checkInStatus.component';
@@ -8,6 +9,7 @@ import Clinic from '../clinic/clinic.component';
 import Company from "../company/company.component";
 import JobNumber from '../jobNumber/jobNumber.component';
 import Label from '../label/label.component';
+import PatientInfo from '../patientInfo/patientInfo.component';
 import Provider from '../provider/provider.component';
 import PurchaseOrder from "../purchaseOrder/purchaseOrder.component";
 import Reason from '../reason/reason.component';
@@ -15,42 +17,46 @@ import VisitDate from '../visitDate/visitDate.component';
 
 import './authDetails.styles.scss';
 
-const AuthDetails = ({ patient }) => {
-  const handleClick = () => {
-    console.log('authdetails clicked');
-    
+class AuthDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      disabled: true
+    }
   }
 
-  if(patient) {
+  handleClick = () => {
+    this.setState({
+      disabled: !this.state.disabled
+    })
+  }
+
+  render() {
     return (
         <div 
           className="auth-details-wrapper"
-          key={`${patient.authorizationPatientId}`}
+          key={`${this.props.authorizationPatientId}`}
         >
-          <header><h5>Authorization {`${patient.authorizationPatientId} `} Details</h5></header>
+          <header>
+            <h5>
+              Authorization {`${this.props.authorizationPatientId} `} Details
+            </h5>
+            <Button 
+              className="edit-authorization-btn"
+              icon={<FaEdit />}
+              onClick={this.handleClick}
+              type="submit"
+            />
+          </header>
           <div className="auth-details-content container">
             <div className="row">
-              <div className="patient-info col-4">
-                <div className="patient-info-title">
-                  <h5>Patient Info</h5>
-                  <Button 
-                    className="patient-info-button"
-                    icon={<FaEdit />}
-                    onClick={handleClick}
-                    type="submit"
-                  />
-                </div>
-                <div><strong>Name:</strong>{` ${patient.firstName} ${patient.lastName}`}</div>
-                <div><strong>SSN:</strong>{` ${patient.ssn}`}</div>
-                <div><strong>Date Of Birth:</strong> {`${patient.dob}`}</div>
-                <div><strong>Phone:</strong> {` ${patient.phone}`}</div>
-              </div>
+              <PatientInfo />
               <div className="employer-info col-4">
                 <h5>Employer Info</h5>
-                <Company />
+                <Company disabled={this.state.disabled} />
                 <JobNumber />
-                <div><Label><strong>Authorizing Rep:</strong></Label>{` ${patient.authRep}`}</div>
-                <div><Label><strong>Rep Phone:</strong></Label>{` ${patient.authRepPhone}`}</div>
+                <div><Label><strong>Authorizing Rep:</strong></Label>{` ${this.props.patient.authRep}`}</div>
+                <div><Label><strong>Rep Phone:</strong></Label>{` ${this.props.patient.authRepPhone}`}</div>
                 <BillingGroup />
               </div>
               <div className="visit-info col-4">
@@ -66,44 +72,12 @@ const AuthDetails = ({ patient }) => {
           </div>
         </div>
     );
-  } 
-  
-  // else {
-  //   return (
-  //     <div className="auth-details-wrapper">
-  //       <header><h5>Authorization Details</h5></header>
-  //       <div className="auth-details-content container">
-  //         <div className="row">
-  //           <div className="patient-info col-4">
-  //             <h5>Patient Info</h5>
-  //             <div><strong>Name:</strong></div>
-  //             <div><strong>SSN:</strong></div>
-  //             <div><strong>Date Of Birth:</strong></div>
-  //             <div><strong>Phone:</strong></div>
-  //           </div>
-  //           <div className="employer-info col-4">
-  //             <h5>Employer Info</h5>
-  //             <div><strong>Company:</strong></div>
-  //             <div><strong>Job #:</strong></div>
-  //             <div><strong>Authorizing Rep:</strong></div>
-  //             <div><strong>Rep Phone:</strong></div>
-  //             <div><strong>Billing Group:</strong></div>
-  //           </div>
-  //           <div className="visit-info col-4">
-  //             <h5>Visit Info</h5>
-  //             <div><strong>Reason for Visit:</strong></div>
-  //             <div><strong>Date of Visit:</strong></div>
-  //             <div><strong>Purchase Order:</strong></div>
-  //             <div><strong>Clinic:</strong></div>
-  //             <div><strong>Provider:</strong></div>
-  //             <div><strong>Check in Status:</strong></div>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  }
 };
+
+AuthDetails.propTypes = {
+  patient: PropTypes.object,
+}
 
 const mapStateToProps = (state) => ({
     patient: state.patient

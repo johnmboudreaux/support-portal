@@ -7,7 +7,7 @@
   margin-bottom: 4rem;
 
   header {
-    align-items: center;
+    align-items: end;
     background-color: $medium-blue;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -17,6 +17,9 @@
     h5 {
       margin-left: 1rem;
     }
+    .edit-authorization-btn {
+      border-radius: 3px;
+    }
   }
 
   .auth-details-content {
@@ -25,21 +28,6 @@
     .btn,
     .custom-button {
       background-color: $medium-blue;
-    }
-
-    .patient-info {
-      .patient-info-title {
-        display: flex;
-        h5 {
-          margin-right: 0.5rem;
-        }
-      }
-      h5, div {
-        margin-bottom: 0.5rem;
-      }
-      .patient-info-button {
-        border-radius: 3px;
-      }
     }
 
     .employer-info {

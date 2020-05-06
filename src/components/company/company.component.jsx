@@ -7,38 +7,28 @@ import FormInput from '../form-input/form-input.component';
 
 import './company.styles.scss';
 
-const Company = ({ patient }) => {
-  const handleClick = () => {
-    console.log('company clicked');
-  }
-
-  const handleChange = (event) => {
-    console.log('company changed');
-    console.log(event.target.value);
-  }
-
+const Company = ({ disabled, patient }) => {
   return (
     <div className="company">
       <FormInput
-        disabled={true}
+        disabled={disabled}
         htmlFor="Company"
         label="Company:"
         name='Company'
-        onChange={handleChange}
         placeholder={patient.company}
         type="text"
       />
       <Button
         className="company-btn"
         icon={<FaSearch />}
-        onClick={handleClick}
       />
     </div>
   )
 }
 
 Company.propTypes = {
-  patient: PropTypes.object
+  patient: PropTypes.object,
+  disabled: PropTypes.bool
 }
 
 const mapStateToProps = (state) => ({
