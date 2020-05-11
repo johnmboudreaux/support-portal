@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as jobNumberActions from '../../redux/actions/jobNumber.action';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
@@ -8,40 +10,64 @@ import FormInput from '../form-input/form-input.component';
 
 import './jobNumber.styles.scss';
 
-const JobNumber = ({ patient }) => {
-  const handleClick = () => {
-    console.log('jobNumber clicked');
-    
+class JobNumber extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      jobNumberString: '',
+      jobArray: [],
+    };
   }
 
-  const handleChange = (e) => {
-    console.log('jobnumber changed');
+  componentDidMount() {
+    const jobs = this.props.actions.setJobNumbers();
+
+    this.setState({
+      jobArray: jobs,
+    });
   }
 
-  return ( 
-    <div className="job-number">
-      <FormInput
-        htmlFor="Job Number"
-        label="Job Number:"
-        placeholder={patient.jobNumber}
-        onChange={handleChange}
-        name='Job'
-      />
-      <Button
-        className="job-btn"
-        icon={<FaSearch />}
-        onClick={handleClick}
-      />
-    </div>
-  );
-};
+  handleChange = (event) => {
+    this.setState({
+      jobNumberString: event.target.value,
+    });
+    this.props.actions.setJobNumberString(this.state.jobNumberString);
+    console.log(this.props);
+  };
 
-JobNumber.propTypes = {
-  patient: PropTypes.object
+  handleClick = () => {};
+
+  render() {
+    return (
+      <div className='job-number'>
+        <FormInput
+          htmlFor='Job Number'
+          label='Job Number:'
+          placeholder={this.props.patient.jobNumber}
+          onChange={this.handleChange}
+          name='Job'
+        />
+        <Button
+          className='job-btn'
+          icon={<FaSearch />}
+          onClick={this.handleClick}
+        />
+      </div>
+    );
+  }
 }
 
+JobNumber.propTypes = {
+  patient: PropTypes.object,
+};
+
 const mapStateToProps = (state) => ({
-    patient: state.patient
+  patient: state.patient,
+  jobs: state.jobs,
 });
 
-export default connect(mapStateToProps)(JobNumber);
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(jobNumberActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(JobNumber);

@@ -18,7 +18,6 @@ class Company extends Component {
   };
 
   handleChange = (event) => {
-    // console.log('changed');
     this.setState({
       companySearchString: event.target.value
     })
@@ -51,7 +50,6 @@ class Company extends Component {
 
 Company.propTypes = {
   patient: PropTypes.object,
-  disabled: PropTypes.bool
 }
 
 const mapStateToProps = (state) => ({
