@@ -30,12 +30,6 @@
       background-color: $medium-blue;
     }
 
-    .employer-info {
-      div:nth-child(n+4):nth-child(-n+5) {
-        margin-bottom: 0.5rem;
-      }
-    }
-
     .visit-info {
       div {
         margin-bottom: 0.2rem;
@@ -47,4 +41,3 @@
     pointer-events: none;
   }
 }
-  
