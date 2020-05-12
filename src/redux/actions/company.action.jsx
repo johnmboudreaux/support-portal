@@ -11,3 +11,14 @@ export const setCompanySearchString = (companySearchString) => {
     company: targetCompany,
   };
 };
+
+export const setCompanies = () => {
+  const companies = dataNodes.map((node) => {
+    return node.companyName;
+  });
+
+  return {
+    type: types.SET_COMPANIES,
+    companies: companies,
+  };
+};
