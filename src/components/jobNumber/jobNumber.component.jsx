@@ -13,45 +13,68 @@ import './jobNumber.styles.scss';
 class JobNumber extends Component {
   constructor(props) {
     super(props);
+    this.jobsObj = this.props.actions.setJobNumbers();
     this.state = {
-      jobNumberString: '',
-      jobArray: [],
+      suggestions: [],
+      text: '',
     };
   }
 
-  componentDidMount() {
-    const jobs = this.props.actions.setJobNumbers();
+  handleTextChange = (e) => {
+    const value = e.target.value;
+    let suggestions = [];
 
-    this.setState({
-      jobArray: jobs,
-    });
-  }
+    if (value.length > 0) {
+      const regex = new RegExp(`^${value}`, 'i');
+      suggestions = this.jobsObj.jobs.sort().filter((v) => regex.test(v));
+    }
 
-  handleChange = (event) => {
-    this.setState({
-      jobNumberString: event.target.value,
-    });
-    this.props.actions.setJobNumberString(this.state.jobNumberString);
-    console.log(this.props);
+    this.setState(() => ({ suggestions, text: value }));
   };
 
-  handleClick = () => {};
+  suggestionSelected(value) {
+    this.setState(() => ({
+      text: value,
+      suggestions: [],
+    }));
+  }
+
+  renderSuggestions() {
+    const { suggestions } = this.state;
+
+    if (suggestions.length === 0) {
+      return null;
+    }
+
+    return (
+      <ul>
+        {suggestions.map((job, idx) => (
+          <li onClick={() => this.suggestionSelected(job)} key={idx}>
+            {job}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
+    const { text } = this.state;
     return (
       <div className='job-number'>
         <FormInput
           htmlFor='Job Number'
           label='Job Number:'
           placeholder={this.props.patient.jobNumber}
-          onChange={this.handleChange}
+          onChange={this.handleTextChange}
           name='Job'
+          value={text}
         />
         <Button
           className='job-btn'
           icon={<FaSearch />}
           onClick={this.handleClick}
         />
+        <div className='suggestions'>{this.renderSuggestions()}</div>
       </div>
     );
   }
