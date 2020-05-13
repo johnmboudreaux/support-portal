@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import BillingGroup from '../billingGroup/billingGroup.component';
 import Company from '../company/company.component';
+import AuthorizingRep from '../authorizingRep/authorizingRep.component';
 import JobNumber from '../jobNumber/jobNumber.component';
-import Label from '../label/label.component';
+import RepPhone from '../repPhone/repPhone.component';
 
 import './employerInfo.styles.scss';
 
@@ -14,18 +15,8 @@ const EmployerInfo = ({ patient }) => {
       <h5>Employer Info</h5>
       <Company />
       <JobNumber />
-      <div>
-        <Label>
-          <strong>Authorizing Rep:</strong>
-        </Label>
-        {` ${patient.authRep}`}
-      </div>
-      <div>
-        <Label>
-          <strong>Rep Phone:</strong>
-        </Label>
-        {` ${patient.authRepPhone}`}
-      </div>
+      <AuthorizingRep />
+      <RepPhone />
       <BillingGroup />
     </div>
   );

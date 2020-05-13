@@ -16,10 +16,11 @@ const FormInput = ({
   value,
   ...props
 }) => {
-  
   return (
     <form>
-      <label htmlFor={name}>{label}</label>
+      <strong>
+        <label htmlFor={name}>{label}</label>
+      </strong>
       <input
         className={className}
         disabled={disabled}
@@ -27,19 +28,19 @@ const FormInput = ({
         name={name}
         onChange={onChange}
         placeholder={placeholder}
-        style={error && {border: 'solid 1px red'}}
+        style={error && { border: 'solid 1px red' }}
         type={type}
         value={value}
       />
-      { error && <p>{ error }</p>}
+      {error && <p>{error}</p>}
     </form>
-  )
-}
+  );
+};
 
 FormInput.defaultProps = {
-  type: "text",
-  className: ""
-}
+  type: 'text',
+  className: '',
+};
 
 FormInput.propTypes = {
   className: PropTypes.string,
@@ -48,7 +49,7 @@ FormInput.propTypes = {
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   value: PropTypes.any,
-  type: PropTypes.oneOf(['text', 'number', 'password'])
-}
+  type: PropTypes.oneOf(['text', 'number', 'password']),
+};
 
 export default FormInput;

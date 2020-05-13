@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import Button from '../customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
+import Label from '../label/label.component';
 
 import './jobNumber.styles.scss';
 
@@ -60,20 +61,23 @@ class JobNumber extends Component {
   render() {
     const { text } = this.state;
     return (
-      <div className='job-number'>
-        <FormInput
-          htmlFor='Job Number'
-          label='Job Number:'
-          placeholder={this.props.patient.jobNumber}
-          onChange={this.handleTextChange}
-          name='Job'
-          value={text}
-        />
-        <Button
-          className='job-btn'
-          icon={<FaSearch />}
-          onClick={this.handleClick}
-        />
+      <div className='job-number row'>
+        <strong className='col-2'>
+          <Label htmlFor='Job Number'>Job Number:</Label>
+        </strong>
+        <div className='job-number-input col-10'>
+          <FormInput
+            placeholder={this.props.patient.jobNumber}
+            onChange={this.handleTextChange}
+            name='Job'
+            value={text}
+          />
+          <Button
+            className='job-btn'
+            icon={<FaSearch />}
+            onClick={this.handleClick}
+          />
+        </div>
         <div className='suggestions'>{this.renderSuggestions()}</div>
       </div>
     );

@@ -6,6 +6,7 @@ import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Button from '../customButton/customButton.component';
 import FormInput from '../form-input/form-input.component';
+import Label from '../label/label.component';
 
 import './company.styles.scss';
 
@@ -70,21 +71,24 @@ class Company extends Component {
     const { text } = this.state;
 
     return (
-      <div className='company'>
-        <FormInput
-          htmlFor='Company'
-          label='Company:'
-          name='Company'
-          onChange={this.handleTextChange}
-          placeholder={this.props.patient.company}
-          type='text'
-          value={text}
-        />
-        <Button
-          className='company-btn'
-          icon={<FaSearch />}
-          onClick={this.handleClick}
-        />
+      <div className='company row'>
+        <strong className='col-2'>
+          <Label htmlFor='Company'>Company:</Label>
+        </strong>
+        <div className='company-input col-10'>
+          <FormInput
+            name='Company'
+            onChange={this.handleTextChange}
+            placeholder={this.props.patient.company}
+            type='text'
+            value={text}
+          />
+          <Button
+            className='company-btn'
+            icon={<FaSearch />}
+            onClick={this.handleClick}
+          />
+        </div>
         <div className='suggestions'>{this.renderSuggestions()}</div>
       </div>
     );
