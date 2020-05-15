@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Typeahead } from 'react-bootstrap-typeahead';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Button from '../customButton/customButton.component';
-import FormInput from '../form-input/form-input.component';
+// import FormInput from '../form-input/form-input.component';
 
 import './billingGroup.styles.scss';
 
@@ -18,7 +19,7 @@ const BillingGroup = ({ patient }) => {
 
   return (
     <div className='billing-group'>
-      <FormInput
+      <Typeahead
         htmlFor='Billing Group'
         label='Billing Group:'
         placeholder={patient.billingGroup}

@@ -24,21 +24,18 @@ class Company extends Component {
   };
 
   render() {
-    const { text } = this.state;
-
     return (
       <div className='company row'>
         <strong className='col-2'>
           <Label htmlFor='Company'>Company:</Label>
         </strong>
-        <div className='company-input col-10'>
+        <div className='company-input-content col-10'>
           <Typeahead
+            id='company-input'
             name='Company'
             options={this.companyObj.companies}
-            onChange={this.handleTextChange}
             placeholder={this.props.patient.company}
             type='text'
-            value={text}
           />
           <Button
             className='company-btn'
