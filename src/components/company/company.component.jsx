@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as companyActions from '../../redux/actions/company.action';
+import { Typeahead } from 'react-bootstrap-typeahead';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Button from '../customButton/customButton.component';
-import FormInput from '../form-input/form-input.component';
 import Label from '../label/label.component';
 
 import './company.styles.scss';
@@ -15,52 +15,8 @@ class Company extends Component {
     super(props);
     this.companyObj = this.props.actions.setCompanies();
     this.state = {
-      text: '',
       companySearchString: '',
-      suggestions: [],
     };
-  }
-
-  handleTextChange = (e) => {
-    const value = e.target.value;
-    let suggestions = [];
-
-    if (value.length > 0) {
-      const regex = new RegExp(`^${value}`, 'i');
-      suggestions = this.companyObj.companies
-        .sort()
-        .filter((v) => regex.test(v));
-    }
-
-    this.setState(() => ({
-      text: value,
-      suggestions,
-    }));
-  };
-
-  suggestionSelected(value) {
-    this.setState(() => ({
-      text: value,
-      suggestions: [],
-    }));
-  }
-
-  renderSuggestions() {
-    const { suggestions } = this.state;
-
-    if (suggestions.length === 0) {
-      return null;
-    }
-
-    return (
-      <ul>
-        {suggestions.map((job, idx) => (
-          <li onClick={() => this.suggestionSelected(job)} key={idx}>
-            {job}
-          </li>
-        ))}
-      </ul>
-    );
   }
 
   handleClick = () => {
@@ -76,8 +32,9 @@ class Company extends Component {
           <Label htmlFor='Company'>Company:</Label>
         </strong>
         <div className='company-input col-10'>
-          <FormInput
+          <Typeahead
             name='Company'
+            options={this.companyObj.companies}
             onChange={this.handleTextChange}
             placeholder={this.props.patient.company}
             type='text'
@@ -89,7 +46,6 @@ class Company extends Component {
             onClick={this.handleClick}
           />
         </div>
-        <div className='suggestions'>{this.renderSuggestions()}</div>
       </div>
     );
   }
