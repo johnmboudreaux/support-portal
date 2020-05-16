@@ -1,46 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as billingGroupActions from '../../redux/actions/billingGroup.action';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Button from '../customButton/customButton.component';
-// import FormInput from '../form-input/form-input.component';
+import Label from '../label/label.component';
 
 import './billingGroup.styles.scss';
 
-const BillingGroup = ({ patient }) => {
-  const handleChange = () => {
-    console.log('billing group changed');
-  };
+class BillingGroup extends Component {
+  constructor(props) {
+    super(props);
+    this.billingGroupObj = this.props.actions.setBillingGroup();
+  }
 
-  const handleClick = () => {
-    console.log('billing group clicked');
-  };
-
-  return (
-    <div className='billing-group'>
-      <Typeahead
-        htmlFor='Billing Group'
-        label='Billing Group:'
-        placeholder={patient.billingGroup}
-        onChange={handleChange}
-        name='billing-group'
-      />
-      <Button
-        className='billing-group-btn'
-        onClick={handleClick}
-        icon={<FaSearch />}
-      />
-    </div>
-  );
-};
+  render() {
+    return (
+      <div className='billing-group row'>
+        <strong className='col-2'>
+          <Label htmlFor='Billing Group'>Billing Group:</Label>
+        </strong>
+        <div className='billing-group-input-content col-10'>
+          <Typeahead
+            htmlFor='Billing Group'
+            id='billing-group-input'
+            label='Billing Group:'
+            name='billing-group'
+            options={this.billingGroupObj.billingGroup}
+            placeholder={this.props.patient.billingGroup}
+          />
+          <Button className='billing-group-btn' icon={<FaSearch />} />
+        </div>
+      </div>
+    );
+  }
+}
 
 BillingGroup.propTypes = {
   patient: PropTypes.object,
+  billingGroup: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
   patient: state.patient,
+  billingGroup: state.billingGroup,
 });
 
-export default connect(mapStateToProps)(BillingGroup);
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(billingGroupActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BillingGroup);
