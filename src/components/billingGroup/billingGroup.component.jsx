@@ -19,10 +19,10 @@ class BillingGroup extends Component {
   render() {
     return (
       <div className='billing-group row'>
-        <strong className='col-2'>
+        <strong className='col-5'>
           <Label htmlFor='Billing Group'>Billing Group:</Label>
         </strong>
-        <div className='billing-group-input-content col-10'>
+        <div className='billing-group-input-content col-7'>
           <Typeahead
             htmlFor='Billing Group'
             id='billing-group-input'

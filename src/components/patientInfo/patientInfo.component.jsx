@@ -6,7 +6,7 @@ import './patientInfo.styles.scss';
 
 const PatientInfo = ({ patient }) => {
   return (
-    <div className='patient-info col-4'>
+    <div className='patient-info col-3'>
       <div className='patient-info-title'>
         <h5>Patient Info</h5>
       </div>

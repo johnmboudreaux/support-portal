@@ -11,7 +11,7 @@ import './employerInfo.styles.scss';
 
 const EmployerInfo = ({ patient }) => {
   return (
-    <div className='employer-info col-4'>
+    <div className='employer-info col-5'>
       <h5>Employer Info</h5>
       <Company />
       <JobNumber />

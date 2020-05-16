@@ -7,11 +7,11 @@ import './repPhone.styles.scss';
 
 const RepPhone = ({ patient }) => {
   return (
-    <div>
-      <Label>
+    <div className='row'>
+      <Label className='col-6'>
         <strong>Rep Phone:</strong>
       </Label>
-      {` ${patient.authRepPhone}`}
+      <div className='col-6'>{` ${patient.authRepPhone}`}</div>
     </div>
   );
 };

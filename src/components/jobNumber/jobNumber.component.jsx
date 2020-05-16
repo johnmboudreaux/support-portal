@@ -20,10 +20,10 @@ class JobNumber extends Component {
   render() {
     return (
       <div className='job-number row'>
-        <strong className='col-2'>
-          <Label htmlFor='Job Number'>Job Number:</Label>
+        <strong className='col-3'>
+          <Label htmlFor='Job Number'>Job #:</Label>
         </strong>
-        <div className='job-number-input-contents col-10'>
+        <div className='job-number-input-contents col-9'>
           <Typeahead
             id='job-number-input'
             name='Job'

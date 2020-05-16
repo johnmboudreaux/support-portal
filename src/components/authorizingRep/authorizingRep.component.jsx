@@ -7,11 +7,11 @@ import './authorizingRep.styles.scss';
 
 const AuthorizingRep = ({ patient }) => {
   return (
-    <div>
-      <Label>
+    <div className='row'>
+      <Label className='col-6'>
         <strong>Authorizing Rep:</strong>
       </Label>
-      {` ${patient.authRep}`}
+      <div className='col-6'>{` ${patient.authRep}`}</div>
     </div>
   );
 };
