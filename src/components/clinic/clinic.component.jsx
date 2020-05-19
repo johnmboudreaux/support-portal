@@ -1,47 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FaSearch } from 'react-icons/fa';
+import { bindActionCreators } from 'redux';
+import * as clinicActions from '../../redux/actions/clinic.action';
+import { Typeahead } from 'react-bootstrap-typeahead';
 import PropTypes from 'prop-types';
 
-import Button from '../customButton/customButton.component';
-import FormInput from '../form-input/form-input.component';
+import Label from '../label/label.component';
 
 import './clinic.styles.scss';
 
-const Clinic = ({ patient }) => {
-  const handleClick = () => {
-    console.log('clinic clicked');
-    
+class Clinic extends Component {
+  constructor(props) {
+    super(props);
+    this.clinicObj = this.props.actions.setClinics();
   }
 
-  const handleChange = (e) => {
-    console.log('clinic changed');
+  render() {
+    return (
+      <div className='clinic row'>
+        <strong className='col-5'>
+          <Label htmlFor='Billing Group'>Clinic:</Label>
+        </strong>
+        <div className='clinic-input-content col-7'>
+          <Typeahead
+            htmlFor='Clinic'
+            id='clinic-input'
+            label='Clinic:'
+            name='Clinic'
+            onChange={this.handleChange}
+            options={this.clinicObj.clinic}
+            placeholder={this.props.patient.clinic}
+          />
+        </div>
+      </div>
+    );
   }
-
-  return ( 
-    <div className="clinic">
-      <FormInput
-        htmlFor="Clinic"
-        label="Clinic:"
-        placeholder={patient.clinic}
-        onChange={handleChange}
-        name='Clinic'
-      />
-      <Button
-        className="clinic-btn"
-        icon={<FaSearch />}
-        onClick={handleClick}
-      />
-    </div>
-  );
-};
-
-Clinic.propTypes = {
-  patient: PropTypes.object
 }
 
+Clinic.propTypes = {
+  patient: PropTypes.object,
+};
+
 const mapStateToProps = (state) => ({
-    patient: state.patient
+  patient: state.patient,
 });
 
-export default connect(mapStateToProps)(Clinic);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(clinicActions, dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Clinic);
