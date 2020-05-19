@@ -17,7 +17,7 @@
     "provider": "Null",
     "reason": "Injury",
     "ssn": "123-456-7890",
-    "status": "Pending Tests",
+    "status": "Check In Complete",
     "visitDate": "9/24/19"
   },
   {
@@ -37,7 +37,7 @@
     "poNum": "12",
     "provider": "Null",
     "reason": "Pre-Employment",
-    "status": "Clinic - In Progress",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -58,7 +58,7 @@
     "poNum": "13",
     "provider": "Null",
     "reason": "Jus-Cus",
-    "status": "Clinic - Waiting Further Action",
+    "status": "Sign In Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -79,7 +79,7 @@
     "poNum": "13",
     "provider": "Null",
     "reason": "Said-So",
-    "status": "Reviewer - Pending",
+    "status": "Left Before Seen",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -100,7 +100,7 @@
     "poNum": "12",
     "provider": "Null",
     "reason": "Random",
-    "status": "Reviewer - In Review",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -121,7 +121,7 @@
     "poNum": "13",
     "provider": "tbd",
     "reason": "Pre-Employment",
-    "status": "Reviewer - Waitng Further Information",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -142,7 +142,7 @@
     "poNum": "12",
     "provider": "tbd",
     "reason": "Pending Tests",
-    "status": "Reviewer - Returned To Clinic",
+    "status": "Check In Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -163,7 +163,7 @@
     "poNum": "12",
     "provider": "tbd",
     "reason": "Pre-Employment",
-    "status": "Cleared",
+    "status": "Sign In Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -184,7 +184,7 @@
     "poNum": "12",
     "provider": "tbd",
     "reason": "Pre-Employment",
-    "status": "Cleared with Restrictions",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -205,7 +205,7 @@
     "poNum": "12",
     "provider": "tbd",
     "reason": "Pre-Employment",
-    "status": "Not Cleared",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -226,7 +226,7 @@
     "poNum": "12",
     "provider": "Null",
     "reason": "Pre-Employment",
-    "status": "Further Testing Cancelled",
+    "status": "Check In Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -247,7 +247,7 @@
     "poNum": "12",
     "provider": "Null",
     "reason": "Pre-Employment",
-    "status": "Medically Not Cleared",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -268,7 +268,7 @@
     "poNum": "12",
     "provider": "Null",
     "reason": "Pre-Employment",
-    "status": "Sent To Clinic For Further Evaluation",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   },
@@ -289,7 +289,7 @@
     "poNum": "12",
     "provider": "Null",
     "reason": "Pre-Employment",
-    "status": "Clinic - Results Pending",
+    "status": "Check Out Complete",
     "ssn": "123-456-7890",
     "visitDate": "9/24/19"
   }
