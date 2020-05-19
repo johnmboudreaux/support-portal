@@ -49,6 +49,7 @@ class Company extends Component {
 }
 
 Company.propTypes = {
+  actions: PropTypes.object,
   patient: PropTypes.object,
 };
 

@@ -39,8 +39,9 @@ class BillingGroup extends Component {
 }
 
 BillingGroup.propTypes = {
-  patient: PropTypes.object,
+  actions: PropTypes.object,
   billingGroup: PropTypes.object,
+  patient: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
