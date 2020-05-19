@@ -19,7 +19,7 @@ class Clinic extends Component {
     return (
       <div className='clinic row'>
         <strong className='col-5'>
-          <Label htmlFor='Billing Group'>Clinic:</Label>
+          <Label htmlFor='Clinic'>Clinic:</Label>
         </strong>
         <div className='clinic-input-content col-7'>
           <Typeahead
@@ -27,7 +27,6 @@ class Clinic extends Component {
             id='clinic-input'
             label='Clinic:'
             name='Clinic'
-            onChange={this.handleChange}
             options={this.clinicObj.clinic}
             placeholder={this.props.patient.clinic}
           />
