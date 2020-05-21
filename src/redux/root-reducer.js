@@ -7,6 +7,7 @@ import jobs from '../redux/jobNumber/jobNumber.reducer.jsx';
 import patient from '../redux/patient/patient.reducer.jsx';
 import providers from '../redux/provider/provider.reducer.jsx';
 import purchaseOrder from '../redux/purchaseOrder/purchaseOrder.reducer.jsx';
+import reasonsForVisit from '../redux/reasonForVisit/reasonsForVisit.reducer.jsx';
 
 const rootReducer = combineReducers({
   billingGroup,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   patient,
   providers,
   purchaseOrder,
+  reasonsForVisit,
 });
 
 export default rootReducer;

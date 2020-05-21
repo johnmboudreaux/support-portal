@@ -1,0 +1,33 @@
+.reason-for-visit {
+  display: flex;
+  align-items: baseline;
+  .reason-for-visit-select {
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    color: #333333;
+    cursor: pointer;
+    padding: 8px 12px;
+    width: 100%;
+    height: 5vh;
+    &:focus,
+    &:hover {
+      outline: none;
+      border: 1px soild #dddddd;
+    }
+  }
+  .form-group {
+    align-items: baseline;
+    display: flex;
+    margin-bottom: 0;
+    padding: 0;
+
+    label {
+      width: 17vw;
+    }
+
+    .form-control {
+      height: 5vh;
+    }
+  }
+}
