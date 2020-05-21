@@ -1,5 +1,17 @@
 .visit-date {
+  display: flex;
+  align-items: baseline;
+  .react-datepicker__input-container {
+    display: block;
+  }
   label {
     margin-right: 0.5rem;
+  }
+  .single-date {
+    border-color: #ced4da;
+    border-radius: 3px;
+    border-width: 1px;
+    height: calc(1.5em + 0.75rem + 2px);
+    width: 111%;
   }
 }
