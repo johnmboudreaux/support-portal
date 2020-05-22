@@ -1,8 +1,8 @@
 import * as types from '../actions/actionTypes.js';
-import dataNodes from '../../components/shared/data/company.json';
+import companyNodes from '../../components/shared/data/company.json';
 
 export const setCompanySearchString = (companySearchString) => {
-  const targetCompany = dataNodes.find((companyNode) => {
+  const targetCompany = companyNodes.find((companyNode) => {
     return companyNode.companyName === companySearchString ? companyNode : null;
   });
 
@@ -13,7 +13,7 @@ export const setCompanySearchString = (companySearchString) => {
 };
 
 export const setCompanies = () => {
-  const companies = dataNodes.map((node) => {
+  const companies = companyNodes.map((node) => {
     return node.companyName;
   });
 
