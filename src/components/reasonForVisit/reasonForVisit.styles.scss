@@ -1,19 +1,21 @@
+@import '../shared/variables';
+
 .reason-for-visit {
   display: flex;
   align-items: baseline;
   .reason-for-visit-select {
-    background-color: #eeeeee;
-    border: 1px solid #dddddd;
+    background-color: $medium-blue;
+    border: 1px solid $border-grey;
     border-radius: 3px;
-    color: #333333;
+    color: $white;
     cursor: pointer;
     padding: 8px 12px;
     width: 100%;
-    height: 5vh;
+    height: 6vh;
     &:focus,
     &:hover {
       outline: none;
-      border: 1px soild #dddddd;
+      border: 1px soild $border-grey;
     }
   }
   .form-group {
