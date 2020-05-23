@@ -2,12 +2,21 @@ import * as types from '../actions/actionTypes.js';
 import dataNodes from '../../components/shared/data/authorization.json';
 
 export const setPatientIdVal = (patientId) => {
-    const targetPatient = dataNodes.find(patientNode => {
-        return  patientNode.authorizationPatientId === patientId ? patientNode : null;
-    });
+  const targetPatient = dataNodes.find((patientNode) => {
+    return patientNode.authorizationPatientId === patientId
+      ? patientNode
+      : null;
+  });
 
-    return {
-        type: types.SET_PATIENT_ID_VALUE,
-        patient: targetPatient
-    };
-}
+  return {
+    type: types.SET_PATIENT_ID_VALUE,
+    patient: targetPatient,
+  };
+};
+
+export const setPatientReason = (reason) => {
+  return {
+    type: types.SET_PATIENT_REASON,
+    reason,
+  };
+};

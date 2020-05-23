@@ -29,6 +29,11 @@ const patientReducer = (state = initialPatientState, action) => {
         ...state,
         ...action.patient,
       };
+    case types.SET_PATIENT_REASON:
+      return {
+        ...state,
+        reason: action.reason,
+      };
     default:
       return state;
   }
