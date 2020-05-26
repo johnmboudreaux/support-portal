@@ -3,6 +3,7 @@ import billingGroup from '../redux/billingGroup/billingGroup.reducer.jsx';
 import checkInStatuses from '../redux/checkInStatuses/checkInStatuses.reducer.jsx';
 import clinics from '../redux/clinic/clinic.reducer.jsx';
 import company from '../redux/company/company.reducer.jsx';
+import visitDate from '../redux/visitDate/visitDate.reducer.jsx';
 import jobs from '../redux/jobNumber/jobNumber.reducer.jsx';
 import patient from '../redux/patient/patient.reducer.jsx';
 import providers from '../redux/provider/provider.reducer.jsx';
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   checkInStatuses,
   clinics,
   company,
+  visitDate,
   jobs,
   patient,
   providers,
