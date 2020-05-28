@@ -19,7 +19,7 @@ const initialPatientState = {
   reason: '',
   ssn: '',
   status: '',
-  visitDate: '',
+  dateOfVisit: '',
 };
 
 const patientReducer = (state = initialPatientState, action) => {

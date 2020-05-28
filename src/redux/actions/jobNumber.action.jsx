@@ -2,6 +2,7 @@ import * as types from '../actions/actionTypes.js';
 import dataNodes from '../../components/shared/data/authorization.json';
 
 export const setJobNumbers = (searchedJobNumberString) => {
+  // this will pull from eme.projectCompanyjob table
   const jobNumbers = dataNodes.map((node) => {
     return node.jobNumber;
   });

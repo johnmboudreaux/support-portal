@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as visitDateActions from '../../redux/actions/visitDate.action';
+import * as dateOfVisitActions from '../../redux/actions/dateOfVisit.action';
 import PropTypes from 'prop-types';
 import Label from '../label/label.component';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-import './visitDate.styles.scss';
+import './dateOfVisit.styles.scss';
 
-class VisitDate extends Component {
+class DateOfVisit extends Component {
   state = {
     startDate: false,
   };
 
-  handleChange = (date, e, value) => {
+  handleChange = (date) => {
     this.setState(
       {
         startDate: date,
       },
       () => {
-        return this.props.actions.setSelectedDate(this.state);
+        this.props.actions.setDateOfVisit(this.state.startDate);
       }
     );
   };
@@ -34,8 +34,9 @@ class VisitDate extends Component {
         <div className='col-7'>
           <DatePicker
             className='single-date'
+            dateFormat='MMMM d, yyyy h:mm'
             onChange={this.handleChange}
-            placeholderText={this.props.patient.visitDate}
+            placeholderText={this.props.patient.dateOfVisit}
             selected={this.state.startDate}
           />
         </div>
@@ -44,7 +45,7 @@ class VisitDate extends Component {
   }
 }
 
-VisitDate.propTypes = {
+DateOfVisit.propTypes = {
   patient: PropTypes.object,
 };
 
@@ -53,7 +54,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(visitDateActions, dispatch),
+  actions: bindActionCreators(dateOfVisitActions, dispatch),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(VisitDate);
+export default connect(mapStateToProps, mapDispatchToProps)(DateOfVisit);

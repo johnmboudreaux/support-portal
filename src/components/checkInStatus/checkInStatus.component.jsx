@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as checkInActions from '../../redux/actions/checkInStatuses.action';
+import * as checkInActions from '../../redux/actions/checkInStatus.action';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ import './checkInStatus.styles.scss';
 class CheckInStatus extends Component {
   constructor(props) {
     super(props);
-    this.checkInObj = this.props.actions.setCheckinStatuses();
+    this.checkInObj = this.props.actions.loadCheckinStatus();
   }
 
   render() {
@@ -27,7 +27,7 @@ class CheckInStatus extends Component {
             id='check-in-status'
             label='Check In Status:'
             name='Check In Status'
-            options={this.checkInObj.checkInStatuses}
+            options={this.checkInObj.checkInStatus}
             placeholder={this.props.patient.status}
           />
         </div>
