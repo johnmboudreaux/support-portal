@@ -20,7 +20,7 @@ class DateOfVisit extends Component {
         startDate: date,
       },
       () => {
-        this.props.actions.setDateOfVisit(this.state.startDate);
+        this.props.actions.setDateOfVisit(date);
       }
     );
   };
@@ -34,7 +34,7 @@ class DateOfVisit extends Component {
         <div className='col-7'>
           <DatePicker
             className='single-date'
-            dateFormat='MMMM d, yyyy h:mm'
+            dateFormat='MM/dd/yyyy'
             onChange={this.handleChange}
             placeholderText={this.props.patient.dateOfVisit}
             selected={this.state.startDate}
