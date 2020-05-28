@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaSave } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import Button from '../customButton/customButton.component';
 import EmployerInfo from '../employerInfo/employerInfo.component';
@@ -17,11 +17,17 @@ class AuthDetails extends Component {
     };
   }
 
-  handleClick = (event) => {
+  handleEditClick = (event) => {
+    console.log('editClick');
+
     const targ = document.querySelector('.auth-details-content');
+    const saveBtn = document.querySelector('.save-authorization-btn');
+    const editBtn = document.querySelector('.edit-authorization-btn');
 
     if (this.state.pointerEvent === 'none') {
       targ.classList.toggle('auth-details-content-gate');
+      saveBtn.style.display = 'block';
+      editBtn.style.display = 'none';
       this.setState({
         pointerEvent: 'all',
       });
@@ -31,6 +37,15 @@ class AuthDetails extends Component {
         pointerEvent: 'none',
       });
     }
+  };
+
+  handleSaveClick = () => {
+    const targ = document.querySelector('.auth-details-content');
+    const saveBtn = document.querySelector('.save-authorization-btn');
+    const editBtn = document.querySelector('.edit-authorization-btn');
+    targ.classList.toggle('auth-details-content-gate');
+    saveBtn.style.display = 'none';
+    editBtn.style.display = 'block';
   };
 
   render() {
@@ -46,7 +61,13 @@ class AuthDetails extends Component {
           <Button
             className='edit-authorization-btn'
             icon={<FaEdit />}
-            onClick={this.handleClick}
+            onClick={this.handleEditClick}
+            type='submit'
+          />
+          <Button
+            className='save-authorization-btn'
+            icon={<FaSave />}
+            onClick={this.handleSaveClick}
             type='submit'
           />
         </header>

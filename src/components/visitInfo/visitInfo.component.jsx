@@ -4,7 +4,7 @@ import Clinic from '../clinic/clinic.component';
 import Provider from '../provider/provider.component';
 import PurchaseOrder from '../purchaseOrder/purchaseOrder.component';
 import ReasonForVisit from '../reasonForVisit/reasonForVisit.component';
-import VisitDate from '../visitDate/visitDate.component';
+import DateOfVisit from '../dateOfVisit/dateOfVisit.component';
 
 import './visitInfo.styles.scss';
 
@@ -13,7 +13,7 @@ const VisitInfo = () => {
     <div className='visit-info col-4'>
       <h5>Visit Info</h5>
       <ReasonForVisit />
-      <VisitDate />
+      <DateOfVisit />
       <PurchaseOrder />
       <Clinic />
       <Provider />
