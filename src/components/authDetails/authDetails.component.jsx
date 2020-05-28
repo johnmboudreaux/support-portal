@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FaEdit, FaSave } from 'react-icons/fa';
+import { bindActionCreators } from 'redux';
+import * as authDetailsActions from '../../redux/actions/authDetails.action';
 import PropTypes from 'prop-types';
+
+import { FaEdit, FaSave } from 'react-icons/fa';
 import Button from '../customButton/customButton.component';
 import EmployerInfo from '../employerInfo/employerInfo.component';
 import PatientInfo from '../patientInfo/patientInfo.component';
@@ -18,8 +21,6 @@ class AuthDetails extends Component {
   }
 
   handleEditClick = (event) => {
-    console.log('editClick');
-
     const targ = document.querySelector('.auth-details-content');
     const saveBtn = document.querySelector('.save-authorization-btn');
     const editBtn = document.querySelector('.edit-authorization-btn');
@@ -43,9 +44,12 @@ class AuthDetails extends Component {
     const targ = document.querySelector('.auth-details-content');
     const saveBtn = document.querySelector('.save-authorization-btn');
     const editBtn = document.querySelector('.edit-authorization-btn');
+
     targ.classList.toggle('auth-details-content-gate');
     saveBtn.style.display = 'none';
     editBtn.style.display = 'block';
+
+    this.props.actions.saveAuthDetails(this.props.patient.dateOfVisit);
   };
 
   render() {
@@ -91,4 +95,8 @@ const mapStateToProps = (state) => ({
   patient: state.patient,
 });
 
-export default connect(mapStateToProps)(AuthDetails);
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(authDetailsActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthDetails);

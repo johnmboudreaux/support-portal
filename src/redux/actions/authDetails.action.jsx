@@ -1,27 +1,28 @@
 import * as types from '../actions/actionTypes.js';
+import cleanAuthDetailsData from '../../utils/cleanAuthDetailsData.js';
 
-export const startAuthDetailCall = () => {
+export const startAuthDetailCall = (formattedForStoreDate) => {
   return {
-    type: 'Sometype',
+    type: types.LOAD_CHANGED_DATE_OF_VISIT,
+    formattedForStoreDate,
   };
 };
 
-export const saveAuthDetailsFail = () => {
-  return {
-    type: 'Sometype',
-  };
-};
+// export const saveAuthDetailsFail = () => {
+//   return {
+//     type: 'Sometype',
+//   };
+// };
 
-export const saveAuthDetailsSuccess = () => {
-  return {
-    type: 'Sometype',
-  };
-};
+// export const saveAuthDetailsSuccess = () => {
+//   return {
+//     type: 'Sometype',
+//   };
+// };
 
-export const saveAuthDetails = (utils, patient) => {
+export const saveAuthDetails = (date) => {
   const cleanPatientData = {
-    name: utils.FormatName(patient.name),
-    dateOfVisit: utils.FormatDate(patient.dateOfVisit), //05-18-2020T0:00:00
+    dateOfVisit: cleanAuthDetailsData.parseDateForStore(date),
   };
 
   return (dispatch) => {
