@@ -41,6 +41,7 @@ class AuthDetails extends Component {
   };
 
   handleSaveClick = () => {
+    // this needs to be moved into state
     const targ = document.querySelector('.auth-details-content');
     const saveBtn = document.querySelector('.save-authorization-btn');
     const editBtn = document.querySelector('.edit-authorization-btn');
@@ -49,10 +50,12 @@ class AuthDetails extends Component {
     saveBtn.style.display = 'none';
     editBtn.style.display = 'block';
 
-    this.props.actions.saveAuthDetails(this.props.patient.dateOfVisit);
+    this.props.actions.saveAuthDetails(this.props.dateOfVisit);
   };
 
   render() {
+    console.log(this.props.isFetching);
+
     return (
       <div
         className='auth-details-wrapper'
@@ -76,6 +79,9 @@ class AuthDetails extends Component {
           />
         </header>
         <div className='auth-details-content auth-details-content-gate container'>
+          {this.props.isFetching ? (
+            <div className='auth-details-loading'>boom</div>
+          ) : null}
           <div className='row'>
             <PatientInfo />
             <EmployerInfo />
@@ -93,6 +99,8 @@ AuthDetails.propTypes = {
 
 const mapStateToProps = (state) => ({
   patient: state.patient,
+  dateOfVisit: state.dateOfVisit,
+  isFetching: state.authDetails.isFetching,
 });
 
 const mapDispatchToProps = (dispatch) => ({
