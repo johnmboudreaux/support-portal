@@ -1,7 +1,6 @@
 import * as types from '../actions/actionTypes.js';
 
 export const startAuthDetailCall = (formattedDate) => {
-  // debugger;
   return {
     type: types.LOAD_CHANGED_DATE_OF_VISIT,
     isFetching: true,
@@ -29,15 +28,15 @@ export const saveAuthDetails = (date) => {
   };
   const fakeFetch = new Promise((resolve, reject) => {
     setTimeout(() => {
-      //   resolve({
-      //     status: 200,
-      //     message: 'success',
-      //   });
-      reject({
-        status: 500,
-        message: 'Error: Fake request error',
-        error: 'Did not work (fake request)',
+      resolve({
+        status: 200,
+        message: 'success',
       });
+      // reject({
+      //   status: 500,
+      //   message: 'Error: Fake request error',
+      //   error: 'Did not work (fake request)',
+      // });
     }, 1500);
   });
 

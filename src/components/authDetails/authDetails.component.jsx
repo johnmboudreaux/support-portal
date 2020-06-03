@@ -54,8 +54,6 @@ class AuthDetails extends Component {
   };
 
   render() {
-    console.log(this.props.isFetching);
-
     return (
       <div
         className='auth-details-wrapper'
