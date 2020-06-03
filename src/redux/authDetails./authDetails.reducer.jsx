@@ -13,6 +13,11 @@ const authDetailsReducer = (state = { isFetching: false }, action) => {
         ...state,
         ...action,
       };
+    case types.SAVE_AUTH_DETAILS_SUCCESS:
+      return {
+        ...state,
+        ...action,
+      };
     default:
       return state;
   }
