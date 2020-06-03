@@ -15,6 +15,8 @@ class DateOfVisit extends Component {
   };
 
   handleChange = (date) => {
+    console.log(date);
+
     this.setState(
       {
         startDate: date,

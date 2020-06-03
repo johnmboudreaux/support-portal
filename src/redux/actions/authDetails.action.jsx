@@ -1,45 +1,74 @@
 import * as types from '../actions/actionTypes.js';
-import cleanAuthDetailsData from '../../utils/cleanAuthDetailsData.js';
 
-export const startAuthDetailCall = (formattedForStoreDate) => {
+export const startAuthDetailCall = (formattedDate) => {
+  // debugger;
   return {
     type: types.LOAD_CHANGED_DATE_OF_VISIT,
-    formattedForStoreDate,
+    isFetching: true,
+    formattedDate,
   };
 };
 
-// export const saveAuthDetailsFail = () => {
-//   return {
-//     type: 'Sometype',
-//   };
-// };
+export const saveAuthDetailsFail = () => {
+  return {
+    type: types.SAVE_AUTH_DETAILS_FAIL,
+    isFetching: false,
+  };
+};
 
-// export const saveAuthDetailsSuccess = () => {
-//   return {
-//     type: 'Sometype',
-//   };
-// };
+export const saveAuthDetailsSuccess = () => {
+  return {
+    type: types.SAVE_AUTH_DETAILS_SUCCESS,
+    isFetching: false,
+  };
+};
 
 export const saveAuthDetails = (date) => {
-  const cleanPatientData = {
-    dateOfVisit: cleanAuthDetailsData.parseDateForStore(date),
+  const bodyData = {
+    date,
   };
+  const fakeFetch = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      //   resolve({
+      //     status: 200,
+      //     message: 'success',
+      //   });
+      reject({
+        status: 500,
+        message: 'Error: Fake request error',
+        error: 'Did not work (fake request)',
+      });
+    }, 1500);
+  });
 
   return (dispatch) => {
-    dispatch(startAuthDetailCall());
-    return fetch('/authorizationPatient', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify(cleanPatientData), // body data type must match "Content-Type" header
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        dispatch();
+    dispatch(startAuthDetailCall(date));
+    // return fetch('/authorization.json', {
+    //   method: 'POST',
+    //   credentials: 'same-origin',
+    //   headers: {
+    //     Accept: 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   referrerPolicy: 'no-referrer',
+    //   body: JSON.stringify({ bodyData }), // body data type must match "Content-Type" header
+    // })
+    //   .then((response) => response.json())
+    //   .then((json) => {
+    //     dispatch();
+    //   })
+    //   .catch((err) => console.error(err));
+
+    return fakeFetch
+      .then((fakeResponseObject) => {
+        if (fakeResponseObject.status === 200) {
+          console.log('Save Success');
+          dispatch(saveAuthDetailsSuccess());
+        }
       })
-      .catch((err) => console.error(err));
+      .catch((fakeResponseObject) => {
+        console.log('Save Error');
+        dispatch(saveAuthDetailsFail());
+      });
   };
 };

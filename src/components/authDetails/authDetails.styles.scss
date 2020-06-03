@@ -28,6 +28,17 @@
 
   .auth-details-content {
     padding: 1rem;
+    position: relative;
+
+    .auth-details-loading {
+      position: absolute;
+      background: #000000;
+      top: 0;
+      left: 0;
+      height: 100%;
+      opacity: 0.5;
+      width: 100%;
+    }
 
     .btn,
     .custom-button {

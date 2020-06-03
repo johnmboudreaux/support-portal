@@ -1,9 +1,9 @@
 import moment from 'moment';
 
-const cleanAuthDetailsData = {
+const dataFormatters = {
   parseDateForStore: () => {
     return moment().format('YYYY-MM-DD HH:mm:sss');
   },
 };
 
-export default cleanAuthDetailsData;
+export default dataFormatters;
