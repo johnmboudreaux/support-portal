@@ -16,44 +16,33 @@ class AuthDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pointerEvent: 'none',
+      isBeingEdited: false,
     };
   }
 
-  handleEditClick = (event) => {
-    const targ = document.querySelector('.auth-details-content');
-    const saveBtn = document.querySelector('.save-authorization-btn');
-    const editBtn = document.querySelector('.edit-authorization-btn');
+  handleClick = (event) => {
+    this.setState({
+      isBeingEdited: !this.state.isBeingEdited,
+    });
 
-    if (this.state.pointerEvent === 'none') {
-      targ.classList.toggle('auth-details-content-gate');
-      saveBtn.style.display = 'block';
-      editBtn.style.display = 'none';
-      this.setState({
-        pointerEvent: 'all',
-      });
-    } else if (this.state.pointerEvent === 'all') {
-      targ.classList.toggle('auth-details-content-gate');
-      this.setState({
-        pointerEvent: 'none',
-      });
+    if (this.state.isBeingEdited) {
+      this.handleSaveClick();
+    } else {
+      this.handleEditClick();
     }
   };
 
+  handleEditClick = () => {
+    console.log(this._details_content.classList);
+  };
+
   handleSaveClick = () => {
-    // this needs to be moved into state
-    const targ = document.querySelector('.auth-details-content');
-    const saveBtn = document.querySelector('.save-authorization-btn');
-    const editBtn = document.querySelector('.edit-authorization-btn');
-
-    targ.classList.toggle('auth-details-content-gate');
-    saveBtn.style.display = 'none';
-    editBtn.style.display = 'block';
-
     this.props.actions.saveAuthDetails(this.props.dateOfVisit);
   };
 
   render() {
+    const { isBeingEdited } = this.state;
+
     return (
       <div
         className='auth-details-wrapper'
@@ -64,19 +53,21 @@ class AuthDetails extends Component {
             Details
           </h5>
           <Button
-            className='edit-authorization-btn'
-            icon={<FaEdit />}
-            onClick={this.handleEditClick}
-            type='submit'
-          />
-          <Button
-            className='save-authorization-btn'
-            icon={<FaSave />}
-            onClick={this.handleSaveClick}
+            className={
+              this.state.isBeingEdited
+                ? 'save-authorization-btn'
+                : 'edit-authorization-btn'
+            }
+            icon={isBeingEdited ? <FaSave /> : <FaEdit />}
+            onClick={this.handleClick}
             type='submit'
           />
         </header>
-        <div className='auth-details-content auth-details-content-gate container'>
+        <div
+          className={`auth-details-content container ${
+            isBeingEdited ? '' : 'auth-details-content-gate'
+          }`}
+          ref={(el) => (this._details_content = el)}>
           {this.props.isFetching ? (
             <div className='auth-details-loading'>boom</div>
           ) : null}

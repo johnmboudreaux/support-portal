@@ -4,23 +4,20 @@ import PropTypes from 'prop-types';
 import './customButton.styles.scss';
 
 const CustomButton = ({ className, icon, label, onClick, type }) => (
-  <button
-    className={className}
-    type={type}
-    onClick={onClick}
-  >
-    <span>{icon}</span>{label}
+  <button className={className} type={type} onClick={onClick}>
+    <span>{icon}</span>
+    {label}
   </button>
 );
 
 CustomButton.propTypes = {
-    backgroundColor : PropTypes.string,
-    className : PropTypes.string,
-    fullWidth : PropTypes.bool,
-    icon : PropTypes.node,
-    iconPosition : PropTypes.string,
-    label : PropTypes.string,
-    type: PropTypes.string,
-}
+  backgroundColor: PropTypes.string,
+  className: PropTypes.string,
+  fullWidth: PropTypes.bool,
+  icon: PropTypes.node,
+  iconPosition: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+};
 
 export default CustomButton;

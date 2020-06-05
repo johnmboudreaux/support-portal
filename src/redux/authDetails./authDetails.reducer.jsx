@@ -1,7 +1,6 @@
 import * as types from '../actions/actionTypes.js';
 
 const authDetailsReducer = (state = { isFetching: false }, action) => {
-  // debugger;
   switch (action.type) {
     case types.LOAD_CHANGED_DATE_OF_VISIT:
       return {
