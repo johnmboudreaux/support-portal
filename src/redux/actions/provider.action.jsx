@@ -1,12 +1,11 @@
 import * as types from '../actions/actionTypes.js';
-import dataNodes from '../../components/shared/data/authorization.json';
+import providers from '../../components/shared/data/providers.json';
 
 export const setProviders = () => {
-  // this will pull from eme.providerTable with a contactId
-  const providers = dataNodes.map((node) => node.provider);
+  const providerList = providers.map((provider) => provider.ProviderID);
 
   return {
     type: types.SET_PROVIDERS,
-    providers,
+    providerList,
   };
 };

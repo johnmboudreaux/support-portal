@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as providerActions from '../../redux/actions/provider.action';
+import * as patientActions from '../../redux/actions/patient.action';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import PropTypes from 'prop-types';
 
@@ -10,12 +11,17 @@ import Label from '../label/label.component';
 import './provider.styles.scss';
 
 class Provider extends Component {
-  constructor(props) {
-    super(props);
-    this.providerObj = this.props.actions.setProviders();
+  componentDidMount() {
+    this.props.providerActions.setProviders();
   }
 
+  handleProviderChange = (providerToChangeTo) => {
+    this.props.patientActions.setChangedProvider(providerToChangeTo);
+  };
+
   render() {
+    const { patient, providers } = this.props;
+
     return (
       <div className='provider row'>
         <strong className='col-5'>
@@ -27,8 +33,9 @@ class Provider extends Component {
             id='provider-input'
             label='Provider:'
             name='Provider'
-            options={this.providerObj.providers}
-            placeholder={this.props.patient.provider}
+            onChange={this.handleProviderChange}
+            options={providers || []}
+            placeholder={patient.provider}
           />
         </div>
       </div>
@@ -42,11 +49,13 @@ Provider.propTypes = {
 
 const mapStateToProps = (state) => ({
   patient: state.patient,
+  providers: state.providers,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(providerActions, dispatch),
+    providerActions: bindActionCreators(providerActions, dispatch),
+    patientActions: bindActionCreators(patientActions, dispatch),
   };
 };
 
