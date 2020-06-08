@@ -61,12 +61,12 @@ export const saveAuthDetails = (date) => {
     return fakeFetch
       .then((fakeResponseObject) => {
         if (fakeResponseObject.status === 200) {
-          console.log('Save Success');
+          console.log('Auth Details Save Success');
           dispatch(saveAuthDetailsSuccess());
         }
       })
       .catch((fakeResponseObject) => {
-        console.log('Save Error');
+        console.log('Auth Details Save Error');
         dispatch(saveAuthDetailsFail());
       });
   };

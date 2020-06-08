@@ -20,3 +20,12 @@ export const setPatientReason = (reason) => {
     reason,
   };
 };
+
+export const setChangedClinic = (changedClinicArray) => {
+  const changedClinic = changedClinicArray[0];
+
+  return {
+    type: types.SET_CHANGED_CLINIC_ON_PATIENT,
+    changedClinic,
+  };
+};

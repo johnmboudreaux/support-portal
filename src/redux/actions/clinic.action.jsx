@@ -1,12 +1,16 @@
 import * as types from '../actions/actionTypes.js';
-import dataNodes from '../../components/shared/data/authorization.json';
+import companies from '../../components/shared/data/company.json';
 
 export const setClinics = () => {
-  // this should pull from the company table with a companyTypeId of 2
-  const clinic = dataNodes.map((node) => node.clinic);
+  const clinics = companies.reduce((accu, company, idx) => {
+    if (company.companyTypeid === '2') {
+      accu.push(company.companyName);
+    }
+    return accu;
+  }, []);
 
   return {
     type: types.SET_CLINIC,
-    clinic: clinic,
+    clinics,
   };
 };

@@ -34,6 +34,11 @@ const patientReducer = (state = initialPatientState, action) => {
         ...state,
         reason: action.reason,
       };
+    case types.SET_CHANGED_CLINIC_ON_PATIENT:
+      return {
+        ...state,
+        clinic: action.changedClinic,
+      };
     default:
       return state;
   }
