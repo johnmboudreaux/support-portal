@@ -29,3 +29,12 @@ export const setChangedClinic = (changedClinicArray) => {
     changedClinic,
   };
 };
+
+export const setChangedProvider = (providerToChangeTo) => {
+  const provider = providerToChangeTo[0];
+
+  return {
+    type: types.SET_CHANGED_PROVIDER_ON_PATIENT,
+    provider,
+  };
+};

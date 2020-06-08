@@ -1,0 +1,202 @@
+[
+  {
+    "ProviderID": "1",
+    "ContactID": "2",
+    "Credentials": "M.D., MPH,CIME",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "2",
+    "ContactID": "3",
+    "Credentials": "M.D.",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "3",
+    "ContactID": "4",
+    "Credentials": "PA-C",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "4",
+    "ContactID": "5",
+    "Credentials": "PA-C",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "5",
+    "ContactID": "6",
+    "Credentials": "CFNP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "6",
+    "ContactID": "7",
+    "Credentials": "CFNP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "7",
+    "ContactID": "8",
+    "Credentials": "PA-c",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "8",
+    "ContactID": "31",
+    "Credentials": "NULL",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "9",
+    "ContactID": "232",
+    "Credentials": "PA-C",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "831"
+  },
+  {
+    "ProviderID": "10",
+    "ContactID": "233",
+    "Credentials": "CFNP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "831"
+  },
+  {
+    "ProviderID": "11",
+    "ContactID": "234",
+    "Credentials": "NP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "831"
+  },
+  {
+    "ProviderID": "12",
+    "ContactID": "235",
+    "Credentials": "ANP-C",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "831"
+  },
+  {
+    "ProviderID": "13",
+    "ContactID": "1000",
+    "Credentials": "PA",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "831"
+  },
+  {
+    "ProviderID": "14",
+    "ContactID": "1001",
+    "Credentials": "NP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "15",
+    "ContactID": "1066",
+    "Credentials": "NP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "16",
+    "ContactID": "1083",
+    "Credentials": "NP",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "17",
+    "ContactID": "1227",
+    "Credentials": "D.O.",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "18",
+    "ContactID": "1228",
+    "Credentials": "D.O.",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "19",
+    "ContactID": "1229",
+    "Credentials": "M.D.",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  },
+  {
+    "ProviderID": "20",
+    "ContactID": "1230",
+    "Credentials": "PA",
+    "Active": "1",
+    "CreatedByUserAccountID": "1",
+    "Created": "2015-03-05 19:35:22.210",
+    "LastEdited": "2016-09-13 03:29:55.667",
+    "LastEditedByUserAccountID": "1"
+  }
+]
