@@ -33,7 +33,7 @@ class AuthDetails extends Component {
   };
 
   handleEditClick = () => {
-    console.log(this._details_content.classList);
+    // console.log(this._details_content.classList);
   };
 
   handleSaveClick = () => {
