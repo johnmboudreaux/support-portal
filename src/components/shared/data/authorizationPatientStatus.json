@@ -1,0 +1,142 @@
+[
+  {
+    "AuthorizatoinPatientStatusID": "1",
+    "AuthorizatoinPatientStatusCode": "CLINICPEND",
+    "AuthorizatoinPatientStatusName": "Pending Tests",
+    "AuthorizatoinPatientStatusDescription": "Pending arrival at the Clinic",
+    "Sequence": "1",
+    "ResponsibleSecurityGroupID": "4",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "2",
+    "AuthorizatoinPatientStatusCode": "CLINICPROG",
+    "AuthorizatoinPatientStatusName": "Clinic - In Progress",
+    "AuthorizatoinPatientStatusDescription": "Arrived at Clinic",
+    "Sequence": "2",
+    "ResponsibleSecurityGroupID": "4",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "3",
+    "AuthorizatoinPatientStatusCode": "CLINICWAIT",
+    "AuthorizatoinPatientStatusName": "Clinic - Waiting Further Action",
+    "AuthorizatoinPatientStatusDescription": "Further Action Required",
+    "Sequence": "3",
+    "ResponsibleSecurityGroupID": "",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "4",
+    "AuthorizatoinPatientStatusCode": "REVPEND",
+    "AuthorizatoinPatientStatusName": "Reviewer - Pending",
+    "AuthorizatoinPatientStatusDescription": "Pending Review",
+    "Sequence": "4",
+    "ResponsibleSecurityGroupID": "4",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "5",
+    "AuthorizatoinPatientStatusCode": "REVINREV",
+    "AuthorizatoinPatientStatusName": "Reviewer - In Review",
+    "AuthorizatoinPatientStatusDescription": "In Review",
+    "Sequence": "5",
+    "ResponsibleSecurityGroupID": "3",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "6",
+    "AuthorizatoinPatientStatusCode": "REVAWAIT",
+    "AuthorizatoinPatientStatusName": "Reviewer - Waiting Further Information",
+    "AuthorizatoinPatientStatusDescription": "Reviewer Waiting More Information",
+    "Sequence": "6",
+    "ResponsibleSecurityGroupID": "3",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "7",
+    "AuthorizatoinPatientStatusCode": "REVRETURN",
+    "AuthorizatoinPatientStatusName": "Reviewer - Returned to Clinic",
+    "AuthorizatoinPatientStatusDescription": "Reviewer Returned to Clinic",
+    "Sequence": "6",
+    "ResponsibleSecurityGroupID": "3",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "8",
+    "AuthorizatoinPatientStatusCode": "CLRD",
+    "AuthorizatoinPatientStatusName": "Cleared",
+    "AuthorizatoinPatientStatusDescription": "Cleared",
+    "Sequence": "7",
+    "ResponsibleSecurityGroupID": "4",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "9",
+    "AuthorizatoinPatientStatusCode": "CLRDRSTR",
+    "AuthorizatoinPatientStatusName": "Cleared with Restrictions",
+    "AuthorizatoinPatientStatusDescription": "Cleared with Restrictions",
+    "Sequence": "7",
+    "ResponsibleSecurityGroupID": "NULL",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "10",
+    "AuthorizatoinPatientStatusCode": "NOTCLRD",
+    "AuthorizatoinPatientStatusName": "Not Cleared",
+    "AuthorizatoinPatientStatusDescription": "Not Cleared",
+    "Sequence": "7",
+    "ResponsibleSecurityGroupID": "NULL",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "11",
+    "AuthorizatoinPatientStatusCode": "CLINCANC",
+    "AuthorizatoinPatientStatusName": "Further Testing Cancelled",
+    "AuthorizatoinPatientStatusDescription": "Further Testing Cancelled",
+    "Sequence": "7",
+    "ResponsibleSecurityGroupID": "NULL",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "12",
+    "AuthorizatoinPatientStatusCode": "MEDNOCLRD",
+    "AuthorizatoinPatientStatusName": "Medically Not Cleared",
+    "AuthorizatoinPatientStatusDescription": "Medically Not Cleared",
+    "Sequence": "7",
+    "ResponsibleSecurityGroupID": "NULL",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "14",
+    "AuthorizatoinPatientStatusCode": "SNTFOREVAL",
+    "AuthorizatoinPatientStatusName": "Sent To Clinic For Further Evaluation",
+    "AuthorizatoinPatientStatusDescription": "Sent To Clinic For Further Evaluation",
+    "Sequence": "7",
+    "ResponsibleSecurityGroupID": "NULL",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  },
+  {
+    "AuthorizatoinPatientStatusID": "16",
+    "AuthorizatoinPatientStatusCode": "CLINICRSLT",
+    "AuthorizatoinPatientStatusName": "Clinic - Results Pending",
+    "AuthorizatoinPatientStatusDescription": "Clinic - Results Pending",
+    "Sequence": "2",
+    "ResponsibleSecurityGroupID": "NULL",
+    "Active": "1",
+    "Created": "2015-03-05 19:35:21.463"
+  }
+]
