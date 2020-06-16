@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as jobNumberActions from '../../redux/actions/jobNumber.action';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-import Button from '../customButton/customButton.component';
 import Label from '../label/label.component';
 
 import './jobNumber.styles.scss';
@@ -30,11 +28,6 @@ class JobNumber extends Component {
             options={this.jobsObj.jobs}
             placeholder={this.props.patient.jobNumber}
           />
-          <Button
-            className='job-btn'
-            icon={<FaSearch />}
-            onClick={this.handleClick}
-          />
         </div>
       </div>
     );
@@ -43,6 +36,7 @@ class JobNumber extends Component {
 
 JobNumber.propTypes = {
   patient: PropTypes.object,
+  jobs: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({
