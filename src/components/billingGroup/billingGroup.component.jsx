@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as billingGroupActions from '../../redux/actions/billingGroup.action';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import Button from '../customButton/customButton.component';
 import Label from '../label/label.component';
 
 import './billingGroup.styles.scss';
@@ -31,7 +29,6 @@ class BillingGroup extends Component {
             options={this.billingGroupObj.billingGroup}
             placeholder={this.props.patient.billingGroup}
           />
-          <Button className='billing-group-btn' icon={<FaSearch />} />
         </div>
       </div>
     );

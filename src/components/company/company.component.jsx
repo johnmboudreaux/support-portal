@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as companyActions from '../../redux/actions/company.action';
 import { Typeahead } from 'react-bootstrap-typeahead';
-import { FaSearch } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import Button from '../customButton/customButton.component';
 import Label from '../label/label.component';
 
 import './company.styles.scss';
@@ -36,11 +34,6 @@ class Company extends Component {
             options={this.companyObj.companies}
             placeholder={this.props.patient.company}
             type='text'
-          />
-          <Button
-            className='company-btn'
-            icon={<FaSearch />}
-            onClick={this.handleClick}
           />
         </div>
       </div>
